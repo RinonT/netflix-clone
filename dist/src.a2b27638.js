@@ -33898,7 +33898,22 @@ if ("development" !== "production") {
     style: _propTypes.default.object
   });
 }
-},{"react-router":"node_modules/react-router/esm/react-router.js","@babel/runtime/helpers/esm/inheritsLoose":"node_modules/@babel/runtime/helpers/esm/inheritsLoose.js","react":"node_modules/react/index.js","history":"node_modules/history/esm/history.js","prop-types":"node_modules/prop-types/index.js","tiny-warning":"node_modules/tiny-warning/dist/tiny-warning.esm.js","@babel/runtime/helpers/esm/extends":"node_modules/@babel/runtime/helpers/esm/extends.js","@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js","tiny-invariant":"node_modules/tiny-invariant/dist/tiny-invariant.esm.js"}],"src/fixtures/jumbo.json":[function(require,module,exports) {
+},{"react-router":"node_modules/react-router/esm/react-router.js","@babel/runtime/helpers/esm/inheritsLoose":"node_modules/@babel/runtime/helpers/esm/inheritsLoose.js","react":"node_modules/react/index.js","history":"node_modules/history/esm/history.js","prop-types":"node_modules/prop-types/index.js","tiny-warning":"node_modules/tiny-warning/dist/tiny-warning.esm.js","@babel/runtime/helpers/esm/extends":"node_modules/@babel/runtime/helpers/esm/extends.js","@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js","tiny-invariant":"node_modules/tiny-invariant/dist/tiny-invariant.esm.js"}],"src/constants/routes.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.SIGN_UP = exports.SIGN_IN = exports.BROWSE = exports.HOME = void 0;
+var HOME = '/';
+exports.HOME = HOME;
+var BROWSE = '/browse';
+exports.BROWSE = BROWSE;
+var SIGN_IN = '/signin';
+exports.SIGN_IN = SIGN_IN;
+var SIGN_UP = '/signup';
+exports.SIGN_UP = SIGN_UP;
+},{}],"src/fixtures/jumbo.json":[function(require,module,exports) {
 module.exports = [{
   "id": 1,
   "title": "Enjoy on your TV.",
@@ -37063,7 +37078,7 @@ var _styledComponents = _interopRequireDefault(require("styled-components"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _templateObject7() {
-  var data = _taggedTemplateLiteral([""]);
+  var data = _taggedTemplateLiteral(["\nfont-size: 13px;\ncolor: #575575;\nmargin-bottom: 40px;\n"]);
 
   _templateObject7 = function _templateObject7() {
     return data;
@@ -37073,7 +37088,7 @@ function _templateObject7() {
 }
 
 function _templateObject6() {
-  var data = _taggedTemplateLiteral([""]);
+  var data = _taggedTemplateLiteral(["\n    flex-basis: 100%;\n    height: 0;\n"]);
 
   _templateObject6 = function _templateObject6() {
     return data;
@@ -37083,7 +37098,7 @@ function _templateObject6() {
 }
 
 function _templateObject5() {
-  var data = _taggedTemplateLiteral([""]);
+  var data = _taggedTemplateLiteral(["\n    color: #757575;\n    margin-bottom: 20px;\n    font-size: 13px;\n    text-decoration: none;\n"]);
 
   _templateObject5 = function _templateObject5() {
     return data;
@@ -37093,7 +37108,7 @@ function _templateObject5() {
 }
 
 function _templateObject4() {
-  var data = _taggedTemplateLiteral([""]);
+  var data = _taggedTemplateLiteral(["\n    font-size:16px;\n    color: #575575;\n    margin-bottom: 40px;\n"]);
 
   _templateObject4 = function _templateObject4() {
     return data;
@@ -37103,7 +37118,7 @@ function _templateObject4() {
 }
 
 function _templateObject3() {
-  var data = _taggedTemplateLiteral([""]);
+  var data = _taggedTemplateLiteral(["\n    display: flex; \n    flex-direction: column;  \n    text-align: left;\n"]);
 
   _templateObject3 = function _templateObject3() {
     return data;
@@ -37113,7 +37128,7 @@ function _templateObject3() {
 }
 
 function _templateObject2() {
-  var data = _taggedTemplateLiteral([""]);
+  var data = _taggedTemplateLiteral(["\n    display: grid; \n    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));\n    grid-gap: 15px;\n\n    @media(max-width: 1000px) {\n    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));\n    }\n"]);
 
   _templateObject2 = function _templateObject2() {
     return data;
@@ -37123,7 +37138,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n    display: flex;\n"]);
+  var data = _taggedTemplateLiteral(["\n    display: flex;\n    max-width: 1000px;\n    flex-direction: column;\n    padding: 70px 56px;\n    margin: auto;\n\n    @media(max-width: 1000px) {\n        padding: 70px 30px;\n    }\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -37154,7 +37169,7 @@ var Link = _styledComponents.default.a(_templateObject5());
 
 exports.Link = Link;
 
-var Break = _styledComponents.default.br(_templateObject6());
+var Break = _styledComponents.default.div(_templateObject6());
 
 exports.Break = Break;
 
@@ -37227,7 +37242,346 @@ Footer.Text = function FooterText(_ref7) {
 
   return /*#__PURE__*/_react.default.createElement(_footer.Text, resProps, children);
 };
-},{"react":"node_modules/react/index.js","./styles/footer":"src/components/footer/styles/footer.js"}],"src/components/index.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","./styles/footer":"src/components/footer/styles/footer.js"}],"src/components/accordion/styles/accordion.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.Frame = exports.Body = exports.Header = exports.Inner = exports.Title = exports.Item = exports.Container = void 0;
+
+var _styledComponents = _interopRequireDefault(require("styled-components"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _templateObject7() {
+  var data = _taggedTemplateLiteral(["\n        margin-bottom: 10px;\n        max-width: 1200px;\n"]);
+
+  _templateObject7 = function _templateObject7() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject6() {
+  var data = _taggedTemplateLiteral(["  \n    font-size: 26px;\n    transition: max-height 0.25s cubic-bezier(0.5, 0.1, 0);\n    font-weight: normal;\n    line-height: normal;\n    box-sizing: border-box;\n    background: #303030;\n    padding: 0.8em 1.2em 0.8em 1.2em;\n    user-select: none;\n    align-items: center;\n    width: 100%;\n\n        @media (max-width: 600px) {\n            font-size: 16px;\n            line-height: 22px;\n        }\n"]);
+
+  _templateObject6 = function _templateObject6() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject5() {
+  var data = _taggedTemplateLiteral(["\n    display: flex;\n    justify-content: space-between;\n    cursor: pointer;\n    margin-bottom: 1px;\n    font-size: 26px;\n    font-weight: normal;\n    background: #303030;\n    padding: 0.8em 1.2em 0.8em 1.2em;\n    user-select: none;\n    align-items: center; \n    img {\n        filter: brightness(0) invert(1);\n        width: 24px;\n\n        @media(max-width: 600px) {\n            width: 16px;\n        }\n    }\n    @media(max-width: 600px) {\n        font-size: 16px;\n    }\n"]);
+
+  _templateObject5 = function _templateObject5() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject4() {
+  var data = _taggedTemplateLiteral(["\n    display: flex;\n    padding: 70px 45px;\n    flex-direction: column;\n    max-width: 815px;\n    margin: auto;\n"]);
+
+  _templateObject4 = function _templateObject4() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject3() {
+  var data = _taggedTemplateLiteral(["\n    font-size: 50px;\n    line-height: 1.1;\n    margin-top: 0;\n    margin-bottom: 8px;\n    color: white;\n    text-align: center;\n\n    @media (max-width: 600px) {\n        font-size: 35px;\n    }\n"]);
+
+  _templateObject3 = function _templateObject3() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject2() {
+  var data = _taggedTemplateLiteral(["\n    color: white;\n    margin-bottom: 10px;\n\n    &:first-of-type {\n        margin-top: 3rem;\n    }\n"]);
+
+  _templateObject2 = function _templateObject2() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject() {
+  var data = _taggedTemplateLiteral(["\n    display: flex;\n    border-bottom: 8px solid #222;\n"]);
+
+  _templateObject = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+var Container = _styledComponents.default.section(_templateObject());
+
+exports.Container = Container;
+
+var Item = _styledComponents.default.div(_templateObject2());
+
+exports.Item = Item;
+
+var Title = _styledComponents.default.h1(_templateObject3());
+
+exports.Title = Title;
+
+var Inner = _styledComponents.default.div(_templateObject4());
+
+exports.Inner = Inner;
+
+var Header = _styledComponents.default.div(_templateObject5());
+
+exports.Header = Header;
+
+var Body = _styledComponents.default.div(_templateObject6());
+
+exports.Body = Body;
+
+var Frame = _styledComponents.default.section(_templateObject7());
+
+exports.Frame = Frame;
+},{"styled-components":"node_modules/styled-components/dist/styled-components.browser.esm.js"}],"src/components/accordion/index.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = Accordion;
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _accordion = require("./styles/accordion");
+
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+
+function Accordion(_ref) {
+  var children = _ref.children,
+      resProps = _objectWithoutProperties(_ref, ["children"]);
+
+  return /*#__PURE__*/_react.default.createElement(_accordion.Container, resProps, /*#__PURE__*/_react.default.createElement(_accordion.Inner, null, " ", children, " "));
+}
+
+var ToggleContext = (0, _react.createContext)();
+
+Accordion.Item = function AccordionItem(_ref2) {
+  var children = _ref2.children,
+      resProps = _objectWithoutProperties(_ref2, ["children"]);
+
+  var _useState = (0, _react.useState)(false),
+      _useState2 = _slicedToArray(_useState, 2),
+      toggleShow = _useState2[0],
+      setToggleShow = _useState2[1];
+
+  return /*#__PURE__*/_react.default.createElement(ToggleContext.Provider, {
+    value: {
+      toggleShow: toggleShow,
+      setToggleShow: setToggleShow
+    }
+  }, /*#__PURE__*/_react.default.createElement(_accordion.Item, resProps, children));
+};
+
+Accordion.Title = function AccordionTitle(_ref3) {
+  var children = _ref3.children,
+      resProps = _objectWithoutProperties(_ref3, ["children"]);
+
+  return /*#__PURE__*/_react.default.createElement(_accordion.Title, resProps, children);
+};
+
+Accordion.Frame = function AccordionFrame(_ref4) {
+  var children = _ref4.children,
+      resProps = _objectWithoutProperties(_ref4, ["children"]);
+
+  return /*#__PURE__*/_react.default.createElement(_accordion.Frame, resProps, children);
+};
+
+Accordion.Header = function AccordionHeader(_ref5) {
+  var children = _ref5.children,
+      resProps = _objectWithoutProperties(_ref5, ["children"]);
+
+  var _useContext = (0, _react.useContext)(ToggleContext),
+      toggleShow = _useContext.toggleShow,
+      setToggleShow = _useContext.setToggleShow;
+
+  return /*#__PURE__*/_react.default.createElement(_accordion.Header, _extends({
+    onClick: function onClick() {
+      return setToggleShow(!toggleShow);
+    }
+  }, resProps), children, toggleShow ? /*#__PURE__*/_react.default.createElement("img", {
+    src: "/images/icons/close-slim.png",
+    alt: "close"
+  }) : /*#__PURE__*/_react.default.createElement("img", {
+    src: "/images/icons/add.png",
+    alt: "open"
+  }));
+};
+
+Accordion.Body = function AccordionBody(_ref6) {
+  var children = _ref6.children,
+      resProps = _objectWithoutProperties(_ref6, ["children"]);
+
+  var _useContext2 = (0, _react.useContext)(ToggleContext),
+      toggleShow = _useContext2.toggleShow;
+
+  return toggleShow ? /*#__PURE__*/_react.default.createElement(_accordion.Body, resProps, children) : null;
+};
+},{"react":"node_modules/react/index.js","./styles/accordion":"src/components/accordion/styles/accordion.js"}],"src/components/opt-form/styles/opt-form.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.Text = exports.Button = exports.Input = exports.Container = void 0;
+
+var _styledComponents = _interopRequireDefault(require("styled-components"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _templateObject4() {
+  var data = _taggedTemplateLiteral(["\n    font-size: 19px; \n    color: white;\n    text-align: center;\n\n    @media(max-width: 600px) {\n        font-size: 16px;\n        line-height: 22px;\n    }\n"]);
+
+  _templateObject4 = function _templateObject4() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject3() {
+  var data = _taggedTemplateLiteral(["\n    display: flex;\n    align-items: center;\n    height: 70px;\n    background: #e50914;\n    color: white;\n    text-transform: uppercase;\n    padding: 0 32px;\n    font-size: 26px;\n    border: 0;\n    cursor: pointer;\n\n    img {\n        margin-left: 10px;\n        filter: brightness(0) invert(1);\n        width: 24px;\n    }\n\n    &:hover {\n        background: #f40612;\n    }\n    \n    @media(max-width: 1000px) {\n        height: 50px;\n        font-size: 16px;\n        margin-top: 20px;\n        font-weight: bold;\n    }\n"]);
+
+  _templateObject3 = function _templateObject3() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject2() {
+  var data = _taggedTemplateLiteral(["\n    max-width: 450px;\n    width: 100%;\n    border: 0;\n    padding: 10px;\n    height: 70px;\n    box-sizing: border-box;\n"]);
+
+  _templateObject2 = function _templateObject2() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject() {
+  var data = _taggedTemplateLiteral(["\n display: flex;\n justify-content: center;\n height: 100%;\n margin-top: 20px;\n flex-wrap: wrap;\n \n @media(max-width: 1000px) {\n     flex-direction: column;\n     align-items: center;\n }\n"]);
+
+  _templateObject = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+var Container = _styledComponents.default.div(_templateObject());
+
+exports.Container = Container;
+
+var Input = _styledComponents.default.input(_templateObject2());
+
+exports.Input = Input;
+
+var Button = _styledComponents.default.button(_templateObject3());
+
+exports.Button = Button;
+
+var Text = _styledComponents.default.p(_templateObject4());
+
+exports.Text = Text;
+},{"styled-components":"node_modules/styled-components/dist/styled-components.browser.esm.js"}],"src/components/opt-form/index.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = OptForm;
+
+var _react = _interopRequireDefault(require("react"));
+
+var _optForm = require("./styles/opt-form");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+
+function OptForm(_ref) {
+  var children = _ref.children,
+      resProps = _objectWithoutProperties(_ref, ["children"]);
+
+  return /*#__PURE__*/_react.default.createElement(_optForm.Container, resProps, children);
+}
+
+OptForm.Container = function OptFormContainer(_ref2) {
+  var children = _ref2.children,
+      resProps = _objectWithoutProperties(_ref2, ["children"]);
+
+  return /*#__PURE__*/_react.default.createElement(_optForm.Container, resProps, children);
+};
+
+OptForm.Input = function OptFormInput(_ref3) {
+  var children = _ref3.children,
+      resProps = _objectWithoutProperties(_ref3, ["children"]);
+
+  return /*#__PURE__*/_react.default.createElement(_optForm.Input, resProps, children);
+};
+
+OptForm.Button = function OptFormButton(_ref4) {
+  var children = _ref4.children,
+      resProps = _objectWithoutProperties(_ref4, ["children"]);
+
+  return /*#__PURE__*/_react.default.createElement(_optForm.Button, resProps, children, /*#__PURE__*/_react.default.createElement("img", {
+    src: "/images/icons/chevron-right.png",
+    alt: "try now"
+  }));
+};
+
+OptForm.Text = function OptFormText(_ref5) {
+  var children = _ref5.children,
+      resProps = _objectWithoutProperties(_ref5, ["children"]);
+
+  return /*#__PURE__*/_react.default.createElement(_optForm.Text, resProps, children);
+};
+},{"react":"node_modules/react/index.js","./styles/opt-form":"src/components/opt-form/styles/opt-form.js"}],"src/components/index.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -37245,13 +37599,29 @@ Object.defineProperty(exports, "footer", {
     return _footer.default;
   }
 });
+Object.defineProperty(exports, "Accordion", {
+  enumerable: true,
+  get: function () {
+    return _accordion.default;
+  }
+});
+Object.defineProperty(exports, "OptForm", {
+  enumerable: true,
+  get: function () {
+    return _optForm.default;
+  }
+});
 
 var _jumbotron = _interopRequireDefault(require("./jumbotron"));
 
 var _footer = _interopRequireDefault(require("./footer"));
 
+var _accordion = _interopRequireDefault(require("./accordion"));
+
+var _optForm = _interopRequireDefault(require("./opt-form"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-},{"./jumbotron":"src/components/jumbotron/index.js","./footer":"src/components/footer/index.js"}],"src/containers/jumbotron.js":[function(require,module,exports) {
+},{"./jumbotron":"src/components/jumbotron/index.js","./footer":"src/components/footer/index.js","./accordion":"src/components/accordion/index.js","./opt-form":"src/components/opt-form/index.js"}],"src/containers/jumbotron.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -37329,7 +37699,56 @@ function FooterContainer() {
     href: "#"
   }, "Legal notices"))), /*#__PURE__*/_react.default.createElement(_footer.default.Break, null), /*#__PURE__*/_react.default.createElement(_footer.default.Text, null, "Netflix Madagascar"));
 }
-},{"react":"node_modules/react/index.js","../components/footer":"src/components/footer/index.js"}],"src/pages/home.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","../components/footer":"src/components/footer/index.js"}],"src/fixtures/faqs.json":[function(require,module,exports) {
+module.exports = [{
+  "id": 1,
+  "header": "What is Netflix?",
+  "body": "Netflix is a streaming service that offers a wide variety of award-winning TV programmes, films, anime, documentaries and more – on thousands of internet-connected devices.\n\nYou can watch as much as you want, whenever you want, without a single advert – all for one low monthly price. There's always something new to discover, and new TV programmes and films are added every week!"
+}, {
+  "id": 2,
+  "header": "How much does Netflix cost?",
+  "body": "Watch Netflix on your smartphone, tablet, smart TV, laptop or streaming device, all for one low fixed monthly fee. Plans start from £5.99 a month. No extra costs or contracts."
+}, {
+  "id": 3,
+  "header": "Where can I watch?",
+  "body": "Watch anywhere, anytime, on an unlimited number of devices. Sign in with your Netflix account to watch instantly on the web at netflix.com from your personal computer or on any internet-connected device that offers the Netflix app, including smart TVs, smartphones, tablets, streaming media players and game consoles.\n\nYou can also download your favourite programmes with the iOS, Android, or Windows 10 app. Use downloads to watch while you're on the go and without an internet connection. Take Netflix with you anywhere."
+}, {
+  "id": 4,
+  "header": "How do I cancel?",
+  "body": "Netflix is flexible. There are no annoying contracts and no commitments. You can easily cancel your account online in two clicks. There are no cancellation fees – start or stop your account at any time."
+}, {
+  "id": 5,
+  "header": "What can I watch on Netflix?",
+  "body": "Netflix has an extensive library of feature films, documentaries, TV programmes, anime, award-winning Netflix originals, and more. Watch as much as you want, any time you want."
+}];
+},{}],"src/containers/faqs.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = FaqsContainer;
+
+var _react = _interopRequireDefault(require("react"));
+
+var _index = _interopRequireDefault(require("../components/accordion/index"));
+
+var _index2 = _interopRequireDefault(require("../components/opt-form/index"));
+
+var _faqs = _interopRequireDefault(require("../fixtures/faqs.json"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function FaqsContainer() {
+  return /*#__PURE__*/_react.default.createElement(_index.default, null, /*#__PURE__*/_react.default.createElement(_index.default.Title, null, "Frequently Asked Questions"), /*#__PURE__*/_react.default.createElement(_index.default.Frame, null, _faqs.default.map(function (item) {
+    return /*#__PURE__*/_react.default.createElement(_index.default.Item, {
+      key: item.id
+    }, /*#__PURE__*/_react.default.createElement(_index.default.Header, null, item.header), /*#__PURE__*/_react.default.createElement(_index.default.Body, null, item.body));
+  })), /*#__PURE__*/_react.default.createElement(_index2.default, null, /*#__PURE__*/_react.default.createElement(_index2.default.Input, {
+    placeholder: "Email adress"
+  }), /*#__PURE__*/_react.default.createElement(_index2.default.Button, null, "Try it now"), /*#__PURE__*/_react.default.createElement(_index2.default.Text, null, "Ready to watch? Enter your email to create or restart your membership.")));
+}
+},{"react":"node_modules/react/index.js","../components/accordion/index":"src/components/accordion/index.js","../components/opt-form/index":"src/components/opt-form/index.js","../fixtures/faqs.json":"src/fixtures/faqs.json"}],"src/pages/home.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -37343,12 +37762,14 @@ var _jumbotron = _interopRequireDefault(require("../containers/jumbotron"));
 
 var _footer = _interopRequireDefault(require("../containers/footer"));
 
+var _faqs = _interopRequireDefault(require("../containers/faqs"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function Home() {
-  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(_jumbotron.default, null), /*#__PURE__*/_react.default.createElement(_footer.default, null));
+  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(_jumbotron.default, null), /*#__PURE__*/_react.default.createElement(_faqs.default, null), /*#__PURE__*/_react.default.createElement(_footer.default, null));
 }
-},{"react":"node_modules/react/index.js","../containers/jumbotron":"src/containers/jumbotron.js","../containers/footer":"src/containers/footer.js"}],"src/app.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","../containers/jumbotron":"src/containers/jumbotron.js","../containers/footer":"src/containers/footer.js","../containers/faqs":"src/containers/faqs.js"}],"src/app.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -37360,22 +37781,28 @@ var _react = _interopRequireDefault(require("react"));
 
 var _reactRouterDom = require("react-router-dom");
 
+var ROUTES = _interopRequireWildcard(require("./constants/routes"));
+
 var _home = _interopRequireDefault(require("./pages/home"));
+
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function App() {
   return /*#__PURE__*/_react.default.createElement(_reactRouterDom.BrowserRouter, null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Switch, null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
-    path: "/signin"
+    path: ROUTES.SIGN_IN
   }, /*#__PURE__*/_react.default.createElement("p", null, "I will be the sign in page")), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
-    path: "/signup"
+    path: ROUTES.SIGN_UP
   }, /*#__PURE__*/_react.default.createElement("p", null, "I will be the sign up page")), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
-    path: "/browse"
+    path: ROUTES.BROWSE
   }, /*#__PURE__*/_react.default.createElement("p", null, "I will be the browse page")), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
-    path: "/"
+    path: ROUTES.HOME
   }, /*#__PURE__*/_react.default.createElement(_home.default, null))));
 }
-},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","./pages/home":"src/pages/home.js"}],"src/globalStyles.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","./constants/routes":"src/constants/routes.js","./pages/home":"src/pages/home.js"}],"src/globalStyles.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -37441,7 +37868,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63634" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57520" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
