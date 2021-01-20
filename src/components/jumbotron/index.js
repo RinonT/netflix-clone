@@ -11,6 +11,7 @@ export default function Jumbotron({children, direction='row', ...restProps}) {
 Jumbotron.Pane = function JumbotronPane({children, ...restProps}) {
     return <Pane {...restProps} > {children} </Pane>
  }
+
 Jumbotron.Container = function JumbotronContainer({children, ...restProps}) {
    return <Container {...restProps}>{children}</Container>
 }

@@ -37050,7 +37050,208 @@ Jumbotron.Image = function JumbotronImage(_ref6) {
 
   return /*#__PURE__*/_react.default.createElement(_jumbotron.Image, restProps);
 };
-},{"react":"node_modules/react/index.js","./styles/jumbotron":"src/components/jumbotron/styles/jumbotron.js"}],"src/containers/jumbotron.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","./styles/jumbotron":"src/components/jumbotron/styles/jumbotron.js"}],"src/components/footer/styles/footer.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.Text = exports.Break = exports.Link = exports.Title = exports.Column = exports.Row = exports.Container = void 0;
+
+var _styledComponents = _interopRequireDefault(require("styled-components"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _templateObject7() {
+  var data = _taggedTemplateLiteral([""]);
+
+  _templateObject7 = function _templateObject7() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject6() {
+  var data = _taggedTemplateLiteral([""]);
+
+  _templateObject6 = function _templateObject6() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject5() {
+  var data = _taggedTemplateLiteral([""]);
+
+  _templateObject5 = function _templateObject5() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject4() {
+  var data = _taggedTemplateLiteral([""]);
+
+  _templateObject4 = function _templateObject4() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject3() {
+  var data = _taggedTemplateLiteral([""]);
+
+  _templateObject3 = function _templateObject3() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject2() {
+  var data = _taggedTemplateLiteral([""]);
+
+  _templateObject2 = function _templateObject2() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject() {
+  var data = _taggedTemplateLiteral(["\n    display: flex;\n"]);
+
+  _templateObject = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+var Container = _styledComponents.default.div(_templateObject());
+
+exports.Container = Container;
+
+var Row = _styledComponents.default.div(_templateObject2());
+
+exports.Row = Row;
+
+var Column = _styledComponents.default.div(_templateObject3());
+
+exports.Column = Column;
+
+var Title = _styledComponents.default.p(_templateObject4());
+
+exports.Title = Title;
+
+var Link = _styledComponents.default.a(_templateObject5());
+
+exports.Link = Link;
+
+var Break = _styledComponents.default.br(_templateObject6());
+
+exports.Break = Break;
+
+var Text = _styledComponents.default.p(_templateObject7());
+
+exports.Text = Text;
+},{"styled-components":"node_modules/styled-components/dist/styled-components.browser.esm.js"}],"src/components/footer/index.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = Footer;
+
+var _react = _interopRequireDefault(require("react"));
+
+var _footer = require("./styles/footer");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+
+function Footer(_ref) {
+  var children = _ref.children,
+      resProps = _objectWithoutProperties(_ref, ["children"]);
+
+  return /*#__PURE__*/_react.default.createElement(_footer.Container, resProps, children);
+}
+
+Footer.Row = function FooterRow(_ref2) {
+  var children = _ref2.children,
+      resProps = _objectWithoutProperties(_ref2, ["children"]);
+
+  return /*#__PURE__*/_react.default.createElement(_footer.Row, resProps, children);
+};
+
+Footer.Column = function FooterColumn(_ref3) {
+  var children = _ref3.children,
+      resProps = _objectWithoutProperties(_ref3, ["children"]);
+
+  return /*#__PURE__*/_react.default.createElement(_footer.Column, resProps, children);
+};
+
+Footer.Link = function FooterLink(_ref4) {
+  var children = _ref4.children,
+      resProps = _objectWithoutProperties(_ref4, ["children"]);
+
+  return /*#__PURE__*/_react.default.createElement(_footer.Link, resProps, children);
+};
+
+Footer.Title = function FooterTitle(_ref5) {
+  var children = _ref5.children,
+      resProps = _objectWithoutProperties(_ref5, ["children"]);
+
+  return /*#__PURE__*/_react.default.createElement(_footer.Title, resProps, children);
+};
+
+Footer.Break = function FooterBreak(_ref6) {
+  var children = _ref6.children,
+      resProps = _objectWithoutProperties(_ref6, ["children"]);
+
+  return /*#__PURE__*/_react.default.createElement(_footer.Break, resProps, children);
+};
+
+Footer.Text = function FooterText(_ref7) {
+  var children = _ref7.children,
+      resProps = _objectWithoutProperties(_ref7, ["children"]);
+
+  return /*#__PURE__*/_react.default.createElement(_footer.Text, resProps, children);
+};
+},{"react":"node_modules/react/index.js","./styles/footer":"src/components/footer/styles/footer.js"}],"src/components/index.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+Object.defineProperty(exports, "Jumbotron", {
+  enumerable: true,
+  get: function () {
+    return _jumbotron.default;
+  }
+});
+Object.defineProperty(exports, "footer", {
+  enumerable: true,
+  get: function () {
+    return _footer.default;
+  }
+});
+
+var _jumbotron = _interopRequireDefault(require("./jumbotron"));
+
+var _footer = _interopRequireDefault(require("./footer"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+},{"./jumbotron":"src/components/jumbotron/index.js","./footer":"src/components/footer/index.js"}],"src/containers/jumbotron.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -37062,22 +37263,73 @@ var _react = _interopRequireDefault(require("react"));
 
 var _jumbo = _interopRequireDefault(require("../fixtures/jumbo.json"));
 
-var _index = _interopRequireDefault(require("../components/jumbotron/index"));
+var _components = require("../components");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function JumbotronContainer() {
-  return /*#__PURE__*/_react.default.createElement(_index.default.Container, null, _jumbo.default.map(function (item) {
-    return /*#__PURE__*/_react.default.createElement(_index.default.Container, {
+  return /*#__PURE__*/_react.default.createElement(_components.Jumbotron.Container, null, _jumbo.default.map(function (item) {
+    return /*#__PURE__*/_react.default.createElement(_components.Jumbotron, {
       key: item.id,
       direction: item.direction
-    }, /*#__PURE__*/_react.default.createElement(_index.default.Pane, null, /*#__PURE__*/_react.default.createElement(_index.default.Title, null, item.title), /*#__PURE__*/_react.default.createElement(_index.default.SubTitle, null, item.subTitle)), /*#__PURE__*/_react.default.createElement(_index.default.Pane, null, /*#__PURE__*/_react.default.createElement(_index.default.Image, {
+    }, /*#__PURE__*/_react.default.createElement(_components.Jumbotron.Pane, null, /*#__PURE__*/_react.default.createElement(_components.Jumbotron.Title, null, item.title), /*#__PURE__*/_react.default.createElement(_components.Jumbotron.SubTitle, null, item.subTitle)), /*#__PURE__*/_react.default.createElement(_components.Jumbotron.Pane, null, /*#__PURE__*/_react.default.createElement(_components.Jumbotron.Image, {
       src: item.image,
       alt: item.alt
     })));
   }));
 }
-},{"react":"node_modules/react/index.js","../fixtures/jumbo.json":"src/fixtures/jumbo.json","../components/jumbotron/index":"src/components/jumbotron/index.js"}],"src/pages/home.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","../fixtures/jumbo.json":"src/fixtures/jumbo.json","../components":"src/components/index.js"}],"src/containers/footer.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = FooterContainer;
+
+var _react = _interopRequireDefault(require("react"));
+
+var _footer = _interopRequireDefault(require("../components/footer"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function FooterContainer() {
+  return /*#__PURE__*/_react.default.createElement(_footer.default, null, /*#__PURE__*/_react.default.createElement(_footer.default.Title, null, "Question? Contact us"), /*#__PURE__*/_react.default.createElement(_footer.default.Break, null), /*#__PURE__*/_react.default.createElement(_footer.default.Row, null, /*#__PURE__*/_react.default.createElement(_footer.default.Column, null, /*#__PURE__*/_react.default.createElement(_footer.default.Link, {
+    href: "#"
+  }, "RAQs"), /*#__PURE__*/_react.default.createElement(_footer.default.Link, {
+    href: "#"
+  }, "Investor Relations"), /*#__PURE__*/_react.default.createElement(_footer.default.Link, {
+    href: "#"
+  }, "Ways to watch"), /*#__PURE__*/_react.default.createElement(_footer.default.Link, {
+    href: "#"
+  }, "Corporate Informations"), /*#__PURE__*/_react.default.createElement(_footer.default.Link, {
+    href: "#"
+  }, "Netflix Original")), /*#__PURE__*/_react.default.createElement(_footer.default.Column, null, /*#__PURE__*/_react.default.createElement(_footer.default.Link, {
+    href: "#"
+  }, "Help Center"), /*#__PURE__*/_react.default.createElement(_footer.default.Link, {
+    href: "#"
+  }, "Jobs"), /*#__PURE__*/_react.default.createElement(_footer.default.Link, {
+    href: "#"
+  }, "Terms of Use"), /*#__PURE__*/_react.default.createElement(_footer.default.Link, {
+    href: "#"
+  }, "Contact us")), /*#__PURE__*/_react.default.createElement(_footer.default.Column, null, /*#__PURE__*/_react.default.createElement(_footer.default.Link, {
+    href: "#"
+  }, "Account"), /*#__PURE__*/_react.default.createElement(_footer.default.Link, {
+    href: "#"
+  }, "Redeem gift cards"), /*#__PURE__*/_react.default.createElement(_footer.default.Link, {
+    href: "#"
+  }, "Privacy"), /*#__PURE__*/_react.default.createElement(_footer.default.Link, {
+    href: "#"
+  }, "Speed text")), /*#__PURE__*/_react.default.createElement(_footer.default.Column, null, /*#__PURE__*/_react.default.createElement(_footer.default.Link, {
+    href: "#"
+  }, "Media Centre"), /*#__PURE__*/_react.default.createElement(_footer.default.Link, {
+    href: "#"
+  }, "Buy gift cards"), /*#__PURE__*/_react.default.createElement(_footer.default.Link, {
+    href: "#"
+  }, "Cookie Preference"), /*#__PURE__*/_react.default.createElement(_footer.default.Link, {
+    href: "#"
+  }, "Legal notices"))), /*#__PURE__*/_react.default.createElement(_footer.default.Break, null), /*#__PURE__*/_react.default.createElement(_footer.default.Text, null, "Netflix Madagascar"));
+}
+},{"react":"node_modules/react/index.js","../components/footer":"src/components/footer/index.js"}],"src/pages/home.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -37089,12 +37341,14 @@ var _react = _interopRequireDefault(require("react"));
 
 var _jumbotron = _interopRequireDefault(require("../containers/jumbotron"));
 
+var _footer = _interopRequireDefault(require("../containers/footer"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function Home() {
-  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement(_jumbotron.default, null));
+  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(_jumbotron.default, null), /*#__PURE__*/_react.default.createElement(_footer.default, null));
 }
-},{"react":"node_modules/react/index.js","../containers/jumbotron":"src/containers/jumbotron.js"}],"src/app.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","../containers/jumbotron":"src/containers/jumbotron.js","../containers/footer":"src/containers/footer.js"}],"src/app.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -37121,7 +37375,31 @@ function App() {
     path: "/"
   }, /*#__PURE__*/_react.default.createElement(_home.default, null))));
 }
-},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","./pages/home":"src/pages/home.js"}],"src/index.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","./pages/home":"src/pages/home.js"}],"src/globalStyles.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.GlobalStyles = void 0;
+
+var _styledComponents = require("styled-components");
+
+function _templateObject() {
+  var data = _taggedTemplateLiteral(["\n    html, body {\n        font-family: 'Helvetica Neu', Helvetica, Arial, sans-serif;\n        -webkit-font-smoothing: antialised;\n        -moz-osx-font-something: antialised;\n        background-color: #000000;\n        color: #333333;\n        font-size: 16px;\n        margin: 0;\n    }\n"]);
+
+  _templateObject = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+var GlobalStyles = (0, _styledComponents.createGlobalStyle)(_templateObject());
+exports.GlobalStyles = GlobalStyles;
+},{"styled-components":"node_modules/styled-components/dist/styled-components.browser.esm.js"}],"src/index.js":[function(require,module,exports) {
 "use strict";
 
 var _react = _interopRequireDefault(require("react"));
@@ -37130,10 +37408,12 @@ var _reactDom = _interopRequireDefault(require("react-dom"));
 
 var _app = require("./app");
 
+var _globalStyles = require("./globalStyles");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-_reactDom.default.render( /*#__PURE__*/_react.default.createElement(_app.App, null), document.getElementById('root'));
-},{"react":"node_modules/react/index.js","react-dom":"node_modules/react-dom/index.js","./app":"src/app.js"}],"../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+_reactDom.default.render( /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(_globalStyles.GlobalStyles, null), /*#__PURE__*/_react.default.createElement(_app.App, null)), document.getElementById('root'));
+},{"react":"node_modules/react/index.js","react-dom":"node_modules/react-dom/index.js","./app":"src/app.js","./globalStyles":"src/globalStyles.js"}],"../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -37161,7 +37441,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64930" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63634" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
