@@ -34,7 +34,7 @@ export const Container = styled.section`
 `;
 
 export const Pane = styled.div`
-    width: 60%;
+    /* width: 100%; */
 `;
 
 export const Title = styled.h1`
