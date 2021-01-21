@@ -37831,7 +37831,226 @@ Feature.Subtitle = function FeatureSubtitle(_ref3) {
 
   return /*#__PURE__*/_react.default.createElement(_feature.Subtitle, resProps, children);
 };
-},{"react":"node_modules/react/index.js","./styles/feature":"src/components/feature/styles/feature.js"}],"src/components/index.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","./styles/feature":"src/components/feature/styles/feature.js"}],"src/components/form/styles/form.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.Submit = exports.Input = exports.Link = exports.TextSmall = exports.Text = exports.Title = exports.Base = exports.Error = exports.Container = void 0;
+
+var _styledComponents = _interopRequireDefault(require("styled-components"));
+
+var _reactRouterDom = require("react-router-dom");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _templateObject9() {
+  var data = _taggedTemplateLiteral([""]);
+
+  _templateObject9 = function _templateObject9() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject8() {
+  var data = _taggedTemplateLiteral([""]);
+
+  _templateObject8 = function _templateObject8() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject7() {
+  var data = _taggedTemplateLiteral([""]);
+
+  _templateObject7 = function _templateObject7() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject6() {
+  var data = _taggedTemplateLiteral([""]);
+
+  _templateObject6 = function _templateObject6() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject5() {
+  var data = _taggedTemplateLiteral([""]);
+
+  _templateObject5 = function _templateObject5() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject4() {
+  var data = _taggedTemplateLiteral([""]);
+
+  _templateObject4 = function _templateObject4() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject3() {
+  var data = _taggedTemplateLiteral([""]);
+
+  _templateObject3 = function _templateObject3() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject2() {
+  var data = _taggedTemplateLiteral([""]);
+
+  _templateObject2 = function _templateObject2() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject() {
+  var data = _taggedTemplateLiteral([""]);
+
+  _templateObject = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+var Container = _styledComponents.default.section(_templateObject());
+
+exports.Container = Container;
+
+var Error = _styledComponents.default.div(_templateObject2());
+
+exports.Error = Error;
+
+var Base = _styledComponents.default.form(_templateObject3());
+
+exports.Base = Base;
+
+var Title = _styledComponents.default.h1(_templateObject4());
+
+exports.Title = Title;
+
+var Text = _styledComponents.default.h1(_templateObject5());
+
+exports.Text = Text;
+
+var TextSmall = _styledComponents.default.h2(_templateObject6());
+
+exports.TextSmall = TextSmall;
+var Link = (0, _styledComponents.default)(_reactRouterDom.Link)(_templateObject7());
+exports.Link = Link;
+
+var Input = _styledComponents.default.input(_templateObject8());
+
+exports.Input = Input;
+
+var Submit = _styledComponents.default.button(_templateObject9());
+
+exports.Submit = Submit;
+},{"styled-components":"node_modules/styled-components/dist/styled-components.browser.esm.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js"}],"src/components/form/index.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = Form;
+
+var _react = _interopRequireDefault(require("react"));
+
+var _form = require("./styles/form");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+
+function Form(_ref) {
+  var children = _ref.children,
+      resProps = _objectWithoutProperties(_ref, ["children"]);
+
+  return /*#__PURE__*/_react.default.createElement(_form.Container, resProps, children);
+}
+
+Form.Input = function FormInput(_ref2) {
+  var children = _ref2.children,
+      resProps = _objectWithoutProperties(_ref2, ["children"]);
+
+  return /*#__PURE__*/_react.default.createElement(_form.Input, resProps, children);
+};
+
+Form.Link = function FormLink(_ref3) {
+  var children = _ref3.children,
+      resProps = _objectWithoutProperties(_ref3, ["children"]);
+
+  return /*#__PURE__*/_react.default.createElement(_form.Link, resProps, " ", children, " ");
+};
+
+Form.Submit = function FormSubmit(_ref4) {
+  var children = _ref4.children,
+      resProps = _objectWithoutProperties(_ref4, ["children"]);
+
+  return /*#__PURE__*/_react.default.createElement(_form.Submit, resProps, " ", children, " ");
+};
+
+Form.Text = function FormText(_ref5) {
+  var children = _ref5.children,
+      resProps = _objectWithoutProperties(_ref5, ["children"]);
+
+  return /*#__PURE__*/_react.default.createElement(_form.Text, resProps, " ", children, " ");
+};
+
+Form.Base = function FormBase(_ref6) {
+  var children = _ref6.children,
+      resProps = _objectWithoutProperties(_ref6, ["children"]);
+
+  return /*#__PURE__*/_react.default.createElement(_form.Base, resProps, " ", children, " ");
+};
+
+Form.Title = function FormTitle(_ref7) {
+  var children = _ref7.children,
+      resProps = _objectWithoutProperties(_ref7, ["children"]);
+
+  return /*#__PURE__*/_react.default.createElement(_form.Title, resProps, " ", children, " ");
+};
+
+Form.TextSmall = function FormTextSmall(_ref8) {
+  var children = _ref8.children,
+      resProps = _objectWithoutProperties(_ref8, ["children"]);
+
+  return /*#__PURE__*/_react.default.createElement(_form.TextSmall, resProps, " ", children, " ");
+};
+
+Form.Error = function FormError(_ref9) {
+  var children = _ref9.children,
+      resProps = _objectWithoutProperties(_ref9, ["children"]);
+
+  return /*#__PURE__*/_react.default.createElement(_form.Error, resProps, " ", children, " ");
+};
+},{"react":"node_modules/react/index.js","./styles/form":"src/components/form/styles/form.js"}],"src/components/index.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -37873,6 +38092,12 @@ Object.defineProperty(exports, "Feature", {
     return _feature.default;
   }
 });
+Object.defineProperty(exports, "Form", {
+  enumerable: true,
+  get: function () {
+    return _form.default;
+  }
+});
 
 var _jumbotron = _interopRequireDefault(require("./jumbotron"));
 
@@ -37886,8 +38111,10 @@ var _header = _interopRequireDefault(require("./header"));
 
 var _feature = _interopRequireDefault(require("./feature"));
 
+var _form = _interopRequireDefault(require("./form"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-},{"./jumbotron":"src/components/jumbotron/index.js","./footer":"src/components/footer/index.js","./accordion":"src/components/accordion/index.js","./opt-form":"src/components/opt-form/index.js","./header":"src/components/header/index.js","./feature":"src/components/feature/index.js"}],"src/containers/jumbotron.js":[function(require,module,exports) {
+},{"./jumbotron":"src/components/jumbotron/index.js","./footer":"src/components/footer/index.js","./accordion":"src/components/accordion/index.js","./opt-form":"src/components/opt-form/index.js","./header":"src/components/header/index.js","./feature":"src/components/feature/index.js","./form":"src/components/form/index.js"}],"src/containers/jumbotron.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -38069,7 +38296,71 @@ function Home() {
     placeholder: "Email adress"
   }), /*#__PURE__*/_react.default.createElement(_components.OptForm.Button, null, "Try it now"), /*#__PURE__*/_react.default.createElement(_components.OptForm.Text, null, "Ready to watch? Enter your email to create or restart your membership.")))), /*#__PURE__*/_react.default.createElement(_jumbotron.default, null), /*#__PURE__*/_react.default.createElement(_faqs.default, null), /*#__PURE__*/_react.default.createElement(_footer.default, null));
 }
-},{"react":"node_modules/react/index.js","../containers/jumbotron":"src/containers/jumbotron.js","../containers/footer":"src/containers/footer.js","../containers/faqs":"src/containers/faqs.js","../containers/header":"src/containers/header.js","../components":"src/components/index.js"}],"src/app.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","../containers/jumbotron":"src/containers/jumbotron.js","../containers/footer":"src/containers/footer.js","../containers/faqs":"src/containers/faqs.js","../containers/header":"src/containers/header.js","../components":"src/components/index.js"}],"src/pages/signin.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = Signin;
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _components = require("../components");
+
+var _header = _interopRequireDefault(require("../containers/header"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+function Signin() {
+  var _useState = (0, _react.useState)(''),
+      _useState2 = _slicedToArray(_useState, 2),
+      error = _useState2[0],
+      setError = _useState2[1];
+
+  return /*#__PURE__*/_react.default.createElement(_header.default, null, /*#__PURE__*/_react.default.createElement(_components.Form, null, /*#__PURE__*/_react.default.createElement(_components.Form.Title, null, "Sign in"), error && /*#__PURE__*/_react.default.createElement(_components.Form.Error, null, error)));
+}
+},{"react":"node_modules/react/index.js","../components":"src/components/index.js","../containers/header":"src/containers/header.js"}],"src/pages/index.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+Object.defineProperty(exports, "Home", {
+  enumerable: true,
+  get: function () {
+    return _home.default;
+  }
+});
+Object.defineProperty(exports, "Signin", {
+  enumerable: true,
+  get: function () {
+    return _signin.default;
+  }
+});
+
+var _home = _interopRequireDefault(require("./home"));
+
+var _signin = _interopRequireDefault(require("./signin"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+},{"./home":"src/pages/home.js","./signin":"src/pages/signin.js"}],"src/app.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -38083,7 +38374,7 @@ var _reactRouterDom = require("react-router-dom");
 
 var ROUTES = _interopRequireWildcard(require("./constants/routes"));
 
-var _home = _interopRequireDefault(require("./pages/home"));
+var _pages = require("./pages");
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
 
@@ -38094,15 +38385,15 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function App() {
   return /*#__PURE__*/_react.default.createElement(_reactRouterDom.BrowserRouter, null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Switch, null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
     path: ROUTES.SIGN_IN
-  }, /*#__PURE__*/_react.default.createElement("p", null, "I will be the sign in page")), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
+  }, /*#__PURE__*/_react.default.createElement(_pages.Signin, null)), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
     path: ROUTES.SIGN_UP
   }, /*#__PURE__*/_react.default.createElement("p", null, "I will be the sign up page")), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
     path: ROUTES.BROWSE
   }, /*#__PURE__*/_react.default.createElement("p", null, "I will be the browse page")), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
     path: ROUTES.HOME
-  }, /*#__PURE__*/_react.default.createElement(_home.default, null))));
+  }, /*#__PURE__*/_react.default.createElement(_pages.Home, null))));
 }
-},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","./constants/routes":"src/constants/routes.js","./pages/home":"src/pages/home.js"}],"src/globalStyles.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","./constants/routes":"src/constants/routes.js","./pages":"src/pages/index.js"}],"src/globalStyles.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -38126,7 +38417,19 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 
 var GlobalStyles = (0, _styledComponents.createGlobalStyle)(_templateObject());
 exports.GlobalStyles = GlobalStyles;
-},{"styled-components":"node_modules/styled-components/dist/styled-components.browser.esm.js"}],"src/index.js":[function(require,module,exports) {
+},{"styled-components":"node_modules/styled-components/dist/styled-components.browser.esm.js"}],"src/context/firebase.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.FirebaseContext = void 0;
+
+var _react = require("react");
+
+var FirebaseContext = (0, _react.createContext)(null);
+exports.FirebaseContext = FirebaseContext;
+},{"react":"node_modules/react/index.js"}],"src/index.js":[function(require,module,exports) {
 "use strict";
 
 var _react = _interopRequireDefault(require("react"));
@@ -38137,10 +38440,27 @@ var _app = require("./app");
 
 var _globalStyles = require("./globalStyles");
 
+var _firebase = require("./context/firebase");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-_reactDom.default.render( /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(_globalStyles.GlobalStyles, null), /*#__PURE__*/_react.default.createElement(_app.App, null)), document.getElementById('root'));
-},{"react":"node_modules/react/index.js","react-dom":"node_modules/react-dom/index.js","./app":"src/app.js","./globalStyles":"src/globalStyles.js"}],"../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+var config = {
+  apiKey: "AIzaSyDhqoW0ylhsEJWjRdDmSB2gpbTuM7dxBkY",
+  authDomain: "netflix-onja-rinon.firebaseapp.com",
+  projectId: "netflix-onja-rinon",
+  storageBucket: "netflix-onja-rinon.appspot.com",
+  messagingSenderId: "903610645932",
+  appId: "1:903610645932:web:aeb15290dae7226b410e09" // databaseUrl: "",   
+
+};
+var firebase = window.firebase.initializeApp(config);
+
+_reactDom.default.render( /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(_firebase.FirebaseContext.Provider, {
+  value: {
+    firebase: window.firebase
+  }
+}, /*#__PURE__*/_react.default.createElement(_globalStyles.GlobalStyles, null), /*#__PURE__*/_react.default.createElement(_app.App, null))), document.getElementById('root'));
+},{"react":"node_modules/react/index.js","react-dom":"node_modules/react-dom/index.js","./app":"src/app.js","./globalStyles":"src/globalStyles.js","./context/firebase":"src/context/firebase.js"}],"../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
