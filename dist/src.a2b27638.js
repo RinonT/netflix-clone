@@ -29785,8 +29785,8 @@ function _inheritsLoose(subClass, superClass) {
   subClass.prototype.constructor = subClass;
   subClass.__proto__ = superClass;
 }
-},{}],"node_modules/react-is/cjs/react-is.development.js":[function(require,module,exports) {
-/** @license React v17.0.1
+},{}],"node_modules/prop-types/node_modules/react-is/cjs/react-is.development.js":[function(require,module,exports) {
+/** @license React v16.13.1
  * react-is.development.js
  *
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -29798,77 +29798,34 @@ function _inheritsLoose(subClass, superClass) {
 
 if ("development" !== "production") {
   (function () {
-    'use strict'; // ATTENTION
-    // When adding new symbols to this file,
-    // Please consider also adding to 'react-devtools-shared/src/backend/ReactSymbols'
-    // The Symbol used to tag the ReactElement-like types. If there is no native Symbol
+    'use strict'; // The Symbol used to tag the ReactElement-like types. If there is no native Symbol
     // nor polyfill, then a plain number is used for performance.
 
-    var REACT_ELEMENT_TYPE = 0xeac7;
-    var REACT_PORTAL_TYPE = 0xeaca;
-    var REACT_FRAGMENT_TYPE = 0xeacb;
-    var REACT_STRICT_MODE_TYPE = 0xeacc;
-    var REACT_PROFILER_TYPE = 0xead2;
-    var REACT_PROVIDER_TYPE = 0xeacd;
-    var REACT_CONTEXT_TYPE = 0xeace;
-    var REACT_FORWARD_REF_TYPE = 0xead0;
-    var REACT_SUSPENSE_TYPE = 0xead1;
-    var REACT_SUSPENSE_LIST_TYPE = 0xead8;
-    var REACT_MEMO_TYPE = 0xead3;
-    var REACT_LAZY_TYPE = 0xead4;
-    var REACT_BLOCK_TYPE = 0xead9;
-    var REACT_SERVER_BLOCK_TYPE = 0xeada;
-    var REACT_FUNDAMENTAL_TYPE = 0xead5;
-    var REACT_SCOPE_TYPE = 0xead7;
-    var REACT_OPAQUE_ID_TYPE = 0xeae0;
-    var REACT_DEBUG_TRACING_MODE_TYPE = 0xeae1;
-    var REACT_OFFSCREEN_TYPE = 0xeae2;
-    var REACT_LEGACY_HIDDEN_TYPE = 0xeae3;
+    var hasSymbol = typeof Symbol === 'function' && Symbol.for;
+    var REACT_ELEMENT_TYPE = hasSymbol ? Symbol.for('react.element') : 0xeac7;
+    var REACT_PORTAL_TYPE = hasSymbol ? Symbol.for('react.portal') : 0xeaca;
+    var REACT_FRAGMENT_TYPE = hasSymbol ? Symbol.for('react.fragment') : 0xeacb;
+    var REACT_STRICT_MODE_TYPE = hasSymbol ? Symbol.for('react.strict_mode') : 0xeacc;
+    var REACT_PROFILER_TYPE = hasSymbol ? Symbol.for('react.profiler') : 0xead2;
+    var REACT_PROVIDER_TYPE = hasSymbol ? Symbol.for('react.provider') : 0xeacd;
+    var REACT_CONTEXT_TYPE = hasSymbol ? Symbol.for('react.context') : 0xeace; // TODO: We don't use AsyncMode or ConcurrentMode anymore. They were temporary
+    // (unstable) APIs that have been removed. Can we remove the symbols?
 
-    if (typeof Symbol === 'function' && Symbol.for) {
-      var symbolFor = Symbol.for;
-      REACT_ELEMENT_TYPE = symbolFor('react.element');
-      REACT_PORTAL_TYPE = symbolFor('react.portal');
-      REACT_FRAGMENT_TYPE = symbolFor('react.fragment');
-      REACT_STRICT_MODE_TYPE = symbolFor('react.strict_mode');
-      REACT_PROFILER_TYPE = symbolFor('react.profiler');
-      REACT_PROVIDER_TYPE = symbolFor('react.provider');
-      REACT_CONTEXT_TYPE = symbolFor('react.context');
-      REACT_FORWARD_REF_TYPE = symbolFor('react.forward_ref');
-      REACT_SUSPENSE_TYPE = symbolFor('react.suspense');
-      REACT_SUSPENSE_LIST_TYPE = symbolFor('react.suspense_list');
-      REACT_MEMO_TYPE = symbolFor('react.memo');
-      REACT_LAZY_TYPE = symbolFor('react.lazy');
-      REACT_BLOCK_TYPE = symbolFor('react.block');
-      REACT_SERVER_BLOCK_TYPE = symbolFor('react.server.block');
-      REACT_FUNDAMENTAL_TYPE = symbolFor('react.fundamental');
-      REACT_SCOPE_TYPE = symbolFor('react.scope');
-      REACT_OPAQUE_ID_TYPE = symbolFor('react.opaque.id');
-      REACT_DEBUG_TRACING_MODE_TYPE = symbolFor('react.debug_trace_mode');
-      REACT_OFFSCREEN_TYPE = symbolFor('react.offscreen');
-      REACT_LEGACY_HIDDEN_TYPE = symbolFor('react.legacy_hidden');
-    } // Filter certain DOM attributes (e.g. src, href) if their values are empty strings.
-
-
-    var enableScopeAPI = false; // Experimental Create Event Handle API.
+    var REACT_ASYNC_MODE_TYPE = hasSymbol ? Symbol.for('react.async_mode') : 0xeacf;
+    var REACT_CONCURRENT_MODE_TYPE = hasSymbol ? Symbol.for('react.concurrent_mode') : 0xeacf;
+    var REACT_FORWARD_REF_TYPE = hasSymbol ? Symbol.for('react.forward_ref') : 0xead0;
+    var REACT_SUSPENSE_TYPE = hasSymbol ? Symbol.for('react.suspense') : 0xead1;
+    var REACT_SUSPENSE_LIST_TYPE = hasSymbol ? Symbol.for('react.suspense_list') : 0xead8;
+    var REACT_MEMO_TYPE = hasSymbol ? Symbol.for('react.memo') : 0xead3;
+    var REACT_LAZY_TYPE = hasSymbol ? Symbol.for('react.lazy') : 0xead4;
+    var REACT_BLOCK_TYPE = hasSymbol ? Symbol.for('react.block') : 0xead9;
+    var REACT_FUNDAMENTAL_TYPE = hasSymbol ? Symbol.for('react.fundamental') : 0xead5;
+    var REACT_RESPONDER_TYPE = hasSymbol ? Symbol.for('react.responder') : 0xead6;
+    var REACT_SCOPE_TYPE = hasSymbol ? Symbol.for('react.scope') : 0xead7;
 
     function isValidElementType(type) {
-      if (typeof type === 'string' || typeof type === 'function') {
-        return true;
-      } // Note: typeof might be other than 'symbol' or 'number' (e.g. if it's a polyfill).
-
-
-      if (type === REACT_FRAGMENT_TYPE || type === REACT_PROFILER_TYPE || type === REACT_DEBUG_TRACING_MODE_TYPE || type === REACT_STRICT_MODE_TYPE || type === REACT_SUSPENSE_TYPE || type === REACT_SUSPENSE_LIST_TYPE || type === REACT_LEGACY_HIDDEN_TYPE || enableScopeAPI) {
-        return true;
-      }
-
-      if (typeof type === 'object' && type !== null) {
-        if (type.$$typeof === REACT_LAZY_TYPE || type.$$typeof === REACT_MEMO_TYPE || type.$$typeof === REACT_PROVIDER_TYPE || type.$$typeof === REACT_CONTEXT_TYPE || type.$$typeof === REACT_FORWARD_REF_TYPE || type.$$typeof === REACT_FUNDAMENTAL_TYPE || type.$$typeof === REACT_BLOCK_TYPE || type[0] === REACT_SERVER_BLOCK_TYPE) {
-          return true;
-        }
-      }
-
-      return false;
+      return typeof type === 'string' || typeof type === 'function' || // Note: its typeof might be other than 'symbol' or 'number' if it's a polyfill.
+      type === REACT_FRAGMENT_TYPE || type === REACT_CONCURRENT_MODE_TYPE || type === REACT_PROFILER_TYPE || type === REACT_STRICT_MODE_TYPE || type === REACT_SUSPENSE_TYPE || type === REACT_SUSPENSE_LIST_TYPE || typeof type === 'object' && type !== null && (type.$$typeof === REACT_LAZY_TYPE || type.$$typeof === REACT_MEMO_TYPE || type.$$typeof === REACT_PROVIDER_TYPE || type.$$typeof === REACT_CONTEXT_TYPE || type.$$typeof === REACT_FORWARD_REF_TYPE || type.$$typeof === REACT_FUNDAMENTAL_TYPE || type.$$typeof === REACT_RESPONDER_TYPE || type.$$typeof === REACT_SCOPE_TYPE || type.$$typeof === REACT_BLOCK_TYPE);
     }
 
     function typeOf(object) {
@@ -29880,11 +29837,12 @@ if ("development" !== "production") {
             var type = object.type;
 
             switch (type) {
+              case REACT_ASYNC_MODE_TYPE:
+              case REACT_CONCURRENT_MODE_TYPE:
               case REACT_FRAGMENT_TYPE:
               case REACT_PROFILER_TYPE:
               case REACT_STRICT_MODE_TYPE:
               case REACT_SUSPENSE_TYPE:
-              case REACT_SUSPENSE_LIST_TYPE:
                 return type;
 
               default:
@@ -29910,8 +29868,11 @@ if ("development" !== "production") {
       }
 
       return undefined;
-    }
+    } // AsyncMode is deprecated along with isAsyncMode
 
+
+    var AsyncMode = REACT_ASYNC_MODE_TYPE;
+    var ConcurrentMode = REACT_CONCURRENT_MODE_TYPE;
     var ContextConsumer = REACT_CONTEXT_TYPE;
     var ContextProvider = REACT_PROVIDER_TYPE;
     var Element = REACT_ELEMENT_TYPE;
@@ -29923,29 +29884,21 @@ if ("development" !== "production") {
     var Profiler = REACT_PROFILER_TYPE;
     var StrictMode = REACT_STRICT_MODE_TYPE;
     var Suspense = REACT_SUSPENSE_TYPE;
-    var hasWarnedAboutDeprecatedIsAsyncMode = false;
-    var hasWarnedAboutDeprecatedIsConcurrentMode = false; // AsyncMode should be deprecated
+    var hasWarnedAboutDeprecatedIsAsyncMode = false; // AsyncMode should be deprecated
 
     function isAsyncMode(object) {
       {
         if (!hasWarnedAboutDeprecatedIsAsyncMode) {
           hasWarnedAboutDeprecatedIsAsyncMode = true; // Using console['warn'] to evade Babel and ESLint
 
-          console['warn']('The ReactIs.isAsyncMode() alias has been deprecated, ' + 'and will be removed in React 18+.');
+          console['warn']('The ReactIs.isAsyncMode() alias has been deprecated, ' + 'and will be removed in React 17+. Update your code to use ' + 'ReactIs.isConcurrentMode() instead. It has the exact same API.');
         }
       }
-      return false;
+      return isConcurrentMode(object) || typeOf(object) === REACT_ASYNC_MODE_TYPE;
     }
 
     function isConcurrentMode(object) {
-      {
-        if (!hasWarnedAboutDeprecatedIsConcurrentMode) {
-          hasWarnedAboutDeprecatedIsConcurrentMode = true; // Using console['warn'] to evade Babel and ESLint
-
-          console['warn']('The ReactIs.isConcurrentMode() alias has been deprecated, ' + 'and will be removed in React 18+.');
-        }
-      }
-      return false;
+      return typeOf(object) === REACT_CONCURRENT_MODE_TYPE;
     }
 
     function isContextConsumer(object) {
@@ -29992,6 +29945,8 @@ if ("development" !== "production") {
       return typeOf(object) === REACT_SUSPENSE_TYPE;
     }
 
+    exports.AsyncMode = AsyncMode;
+    exports.ConcurrentMode = ConcurrentMode;
     exports.ContextConsumer = ContextConsumer;
     exports.ContextProvider = ContextProvider;
     exports.Element = Element;
@@ -30020,7 +29975,7 @@ if ("development" !== "production") {
     exports.typeOf = typeOf;
   })();
 }
-},{}],"node_modules/react-is/index.js":[function(require,module,exports) {
+},{}],"node_modules/prop-types/node_modules/react-is/index.js":[function(require,module,exports) {
 'use strict';
 
 if ("development" === 'production') {
@@ -30028,7 +29983,7 @@ if ("development" === 'production') {
 } else {
   module.exports = require('./cjs/react-is.development.js');
 }
-},{"./cjs/react-is.development.js":"node_modules/react-is/cjs/react-is.development.js"}],"node_modules/prop-types/lib/ReactPropTypesSecret.js":[function(require,module,exports) {
+},{"./cjs/react-is.development.js":"node_modules/prop-types/node_modules/react-is/cjs/react-is.development.js"}],"node_modules/prop-types/lib/ReactPropTypesSecret.js":[function(require,module,exports) {
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -30782,7 +30737,7 @@ module.exports = function (isValidElement, throwOnDirectAccess) {
   ReactPropTypes.PropTypes = ReactPropTypes;
   return ReactPropTypes;
 };
-},{"react-is":"node_modules/react-is/index.js","object-assign":"node_modules/object-assign/index.js","./lib/ReactPropTypesSecret":"node_modules/prop-types/lib/ReactPropTypesSecret.js","./checkPropTypes":"node_modules/prop-types/checkPropTypes.js"}],"node_modules/prop-types/index.js":[function(require,module,exports) {
+},{"react-is":"node_modules/prop-types/node_modules/react-is/index.js","object-assign":"node_modules/object-assign/index.js","./lib/ReactPropTypesSecret":"node_modules/prop-types/lib/ReactPropTypesSecret.js","./checkPropTypes":"node_modules/prop-types/checkPropTypes.js"}],"node_modules/prop-types/index.js":[function(require,module,exports) {
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -30801,7 +30756,7 @@ if ("development" !== 'production') {
   // http://fb.me/prop-types-in-prod
   module.exports = require('./factoryWithThrowingShims')();
 }
-},{"react-is":"node_modules/react-is/index.js","./factoryWithTypeCheckers":"node_modules/prop-types/factoryWithTypeCheckers.js"}],"node_modules/@babel/runtime/helpers/esm/extends.js":[function(require,module,exports) {
+},{"react-is":"node_modules/prop-types/node_modules/react-is/index.js","./factoryWithTypeCheckers":"node_modules/prop-types/factoryWithTypeCheckers.js"}],"node_modules/@babel/runtime/helpers/esm/extends.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -32564,7 +32519,205 @@ function pathToRegexp (path, keys, options) {
   return stringToRegexp(/** @type {string} */ (path), /** @type {!Array} */ (keys), options)
 }
 
-},{"isarray":"node_modules/isarray/index.js"}],"node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js":[function(require,module,exports) {
+},{"isarray":"node_modules/isarray/index.js"}],"node_modules/react-router/node_modules/react-is/cjs/react-is.development.js":[function(require,module,exports) {
+/** @license React v16.13.1
+ * react-is.development.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+'use strict';
+
+if ("development" !== "production") {
+  (function () {
+    'use strict'; // The Symbol used to tag the ReactElement-like types. If there is no native Symbol
+    // nor polyfill, then a plain number is used for performance.
+
+    var hasSymbol = typeof Symbol === 'function' && Symbol.for;
+    var REACT_ELEMENT_TYPE = hasSymbol ? Symbol.for('react.element') : 0xeac7;
+    var REACT_PORTAL_TYPE = hasSymbol ? Symbol.for('react.portal') : 0xeaca;
+    var REACT_FRAGMENT_TYPE = hasSymbol ? Symbol.for('react.fragment') : 0xeacb;
+    var REACT_STRICT_MODE_TYPE = hasSymbol ? Symbol.for('react.strict_mode') : 0xeacc;
+    var REACT_PROFILER_TYPE = hasSymbol ? Symbol.for('react.profiler') : 0xead2;
+    var REACT_PROVIDER_TYPE = hasSymbol ? Symbol.for('react.provider') : 0xeacd;
+    var REACT_CONTEXT_TYPE = hasSymbol ? Symbol.for('react.context') : 0xeace; // TODO: We don't use AsyncMode or ConcurrentMode anymore. They were temporary
+    // (unstable) APIs that have been removed. Can we remove the symbols?
+
+    var REACT_ASYNC_MODE_TYPE = hasSymbol ? Symbol.for('react.async_mode') : 0xeacf;
+    var REACT_CONCURRENT_MODE_TYPE = hasSymbol ? Symbol.for('react.concurrent_mode') : 0xeacf;
+    var REACT_FORWARD_REF_TYPE = hasSymbol ? Symbol.for('react.forward_ref') : 0xead0;
+    var REACT_SUSPENSE_TYPE = hasSymbol ? Symbol.for('react.suspense') : 0xead1;
+    var REACT_SUSPENSE_LIST_TYPE = hasSymbol ? Symbol.for('react.suspense_list') : 0xead8;
+    var REACT_MEMO_TYPE = hasSymbol ? Symbol.for('react.memo') : 0xead3;
+    var REACT_LAZY_TYPE = hasSymbol ? Symbol.for('react.lazy') : 0xead4;
+    var REACT_BLOCK_TYPE = hasSymbol ? Symbol.for('react.block') : 0xead9;
+    var REACT_FUNDAMENTAL_TYPE = hasSymbol ? Symbol.for('react.fundamental') : 0xead5;
+    var REACT_RESPONDER_TYPE = hasSymbol ? Symbol.for('react.responder') : 0xead6;
+    var REACT_SCOPE_TYPE = hasSymbol ? Symbol.for('react.scope') : 0xead7;
+
+    function isValidElementType(type) {
+      return typeof type === 'string' || typeof type === 'function' || // Note: its typeof might be other than 'symbol' or 'number' if it's a polyfill.
+      type === REACT_FRAGMENT_TYPE || type === REACT_CONCURRENT_MODE_TYPE || type === REACT_PROFILER_TYPE || type === REACT_STRICT_MODE_TYPE || type === REACT_SUSPENSE_TYPE || type === REACT_SUSPENSE_LIST_TYPE || typeof type === 'object' && type !== null && (type.$$typeof === REACT_LAZY_TYPE || type.$$typeof === REACT_MEMO_TYPE || type.$$typeof === REACT_PROVIDER_TYPE || type.$$typeof === REACT_CONTEXT_TYPE || type.$$typeof === REACT_FORWARD_REF_TYPE || type.$$typeof === REACT_FUNDAMENTAL_TYPE || type.$$typeof === REACT_RESPONDER_TYPE || type.$$typeof === REACT_SCOPE_TYPE || type.$$typeof === REACT_BLOCK_TYPE);
+    }
+
+    function typeOf(object) {
+      if (typeof object === 'object' && object !== null) {
+        var $$typeof = object.$$typeof;
+
+        switch ($$typeof) {
+          case REACT_ELEMENT_TYPE:
+            var type = object.type;
+
+            switch (type) {
+              case REACT_ASYNC_MODE_TYPE:
+              case REACT_CONCURRENT_MODE_TYPE:
+              case REACT_FRAGMENT_TYPE:
+              case REACT_PROFILER_TYPE:
+              case REACT_STRICT_MODE_TYPE:
+              case REACT_SUSPENSE_TYPE:
+                return type;
+
+              default:
+                var $$typeofType = type && type.$$typeof;
+
+                switch ($$typeofType) {
+                  case REACT_CONTEXT_TYPE:
+                  case REACT_FORWARD_REF_TYPE:
+                  case REACT_LAZY_TYPE:
+                  case REACT_MEMO_TYPE:
+                  case REACT_PROVIDER_TYPE:
+                    return $$typeofType;
+
+                  default:
+                    return $$typeof;
+                }
+
+            }
+
+          case REACT_PORTAL_TYPE:
+            return $$typeof;
+        }
+      }
+
+      return undefined;
+    } // AsyncMode is deprecated along with isAsyncMode
+
+
+    var AsyncMode = REACT_ASYNC_MODE_TYPE;
+    var ConcurrentMode = REACT_CONCURRENT_MODE_TYPE;
+    var ContextConsumer = REACT_CONTEXT_TYPE;
+    var ContextProvider = REACT_PROVIDER_TYPE;
+    var Element = REACT_ELEMENT_TYPE;
+    var ForwardRef = REACT_FORWARD_REF_TYPE;
+    var Fragment = REACT_FRAGMENT_TYPE;
+    var Lazy = REACT_LAZY_TYPE;
+    var Memo = REACT_MEMO_TYPE;
+    var Portal = REACT_PORTAL_TYPE;
+    var Profiler = REACT_PROFILER_TYPE;
+    var StrictMode = REACT_STRICT_MODE_TYPE;
+    var Suspense = REACT_SUSPENSE_TYPE;
+    var hasWarnedAboutDeprecatedIsAsyncMode = false; // AsyncMode should be deprecated
+
+    function isAsyncMode(object) {
+      {
+        if (!hasWarnedAboutDeprecatedIsAsyncMode) {
+          hasWarnedAboutDeprecatedIsAsyncMode = true; // Using console['warn'] to evade Babel and ESLint
+
+          console['warn']('The ReactIs.isAsyncMode() alias has been deprecated, ' + 'and will be removed in React 17+. Update your code to use ' + 'ReactIs.isConcurrentMode() instead. It has the exact same API.');
+        }
+      }
+      return isConcurrentMode(object) || typeOf(object) === REACT_ASYNC_MODE_TYPE;
+    }
+
+    function isConcurrentMode(object) {
+      return typeOf(object) === REACT_CONCURRENT_MODE_TYPE;
+    }
+
+    function isContextConsumer(object) {
+      return typeOf(object) === REACT_CONTEXT_TYPE;
+    }
+
+    function isContextProvider(object) {
+      return typeOf(object) === REACT_PROVIDER_TYPE;
+    }
+
+    function isElement(object) {
+      return typeof object === 'object' && object !== null && object.$$typeof === REACT_ELEMENT_TYPE;
+    }
+
+    function isForwardRef(object) {
+      return typeOf(object) === REACT_FORWARD_REF_TYPE;
+    }
+
+    function isFragment(object) {
+      return typeOf(object) === REACT_FRAGMENT_TYPE;
+    }
+
+    function isLazy(object) {
+      return typeOf(object) === REACT_LAZY_TYPE;
+    }
+
+    function isMemo(object) {
+      return typeOf(object) === REACT_MEMO_TYPE;
+    }
+
+    function isPortal(object) {
+      return typeOf(object) === REACT_PORTAL_TYPE;
+    }
+
+    function isProfiler(object) {
+      return typeOf(object) === REACT_PROFILER_TYPE;
+    }
+
+    function isStrictMode(object) {
+      return typeOf(object) === REACT_STRICT_MODE_TYPE;
+    }
+
+    function isSuspense(object) {
+      return typeOf(object) === REACT_SUSPENSE_TYPE;
+    }
+
+    exports.AsyncMode = AsyncMode;
+    exports.ConcurrentMode = ConcurrentMode;
+    exports.ContextConsumer = ContextConsumer;
+    exports.ContextProvider = ContextProvider;
+    exports.Element = Element;
+    exports.ForwardRef = ForwardRef;
+    exports.Fragment = Fragment;
+    exports.Lazy = Lazy;
+    exports.Memo = Memo;
+    exports.Portal = Portal;
+    exports.Profiler = Profiler;
+    exports.StrictMode = StrictMode;
+    exports.Suspense = Suspense;
+    exports.isAsyncMode = isAsyncMode;
+    exports.isConcurrentMode = isConcurrentMode;
+    exports.isContextConsumer = isContextConsumer;
+    exports.isContextProvider = isContextProvider;
+    exports.isElement = isElement;
+    exports.isForwardRef = isForwardRef;
+    exports.isFragment = isFragment;
+    exports.isLazy = isLazy;
+    exports.isMemo = isMemo;
+    exports.isPortal = isPortal;
+    exports.isProfiler = isProfiler;
+    exports.isStrictMode = isStrictMode;
+    exports.isSuspense = isSuspense;
+    exports.isValidElementType = isValidElementType;
+    exports.typeOf = typeOf;
+  })();
+}
+},{}],"node_modules/react-router/node_modules/react-is/index.js":[function(require,module,exports) {
+'use strict';
+
+if ("development" === 'production') {
+  module.exports = require('./cjs/react-is.production.min.js');
+} else {
+  module.exports = require('./cjs/react-is.development.js');
+}
+},{"./cjs/react-is.development.js":"node_modules/react-router/node_modules/react-is/cjs/react-is.development.js"}],"node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -32586,7 +32739,205 @@ function _objectWithoutPropertiesLoose(source, excluded) {
 
   return target;
 }
-},{}],"node_modules/hoist-non-react-statics/dist/hoist-non-react-statics.cjs.js":[function(require,module,exports) {
+},{}],"node_modules/hoist-non-react-statics/node_modules/react-is/cjs/react-is.development.js":[function(require,module,exports) {
+/** @license React v16.13.1
+ * react-is.development.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+'use strict';
+
+if ("development" !== "production") {
+  (function () {
+    'use strict'; // The Symbol used to tag the ReactElement-like types. If there is no native Symbol
+    // nor polyfill, then a plain number is used for performance.
+
+    var hasSymbol = typeof Symbol === 'function' && Symbol.for;
+    var REACT_ELEMENT_TYPE = hasSymbol ? Symbol.for('react.element') : 0xeac7;
+    var REACT_PORTAL_TYPE = hasSymbol ? Symbol.for('react.portal') : 0xeaca;
+    var REACT_FRAGMENT_TYPE = hasSymbol ? Symbol.for('react.fragment') : 0xeacb;
+    var REACT_STRICT_MODE_TYPE = hasSymbol ? Symbol.for('react.strict_mode') : 0xeacc;
+    var REACT_PROFILER_TYPE = hasSymbol ? Symbol.for('react.profiler') : 0xead2;
+    var REACT_PROVIDER_TYPE = hasSymbol ? Symbol.for('react.provider') : 0xeacd;
+    var REACT_CONTEXT_TYPE = hasSymbol ? Symbol.for('react.context') : 0xeace; // TODO: We don't use AsyncMode or ConcurrentMode anymore. They were temporary
+    // (unstable) APIs that have been removed. Can we remove the symbols?
+
+    var REACT_ASYNC_MODE_TYPE = hasSymbol ? Symbol.for('react.async_mode') : 0xeacf;
+    var REACT_CONCURRENT_MODE_TYPE = hasSymbol ? Symbol.for('react.concurrent_mode') : 0xeacf;
+    var REACT_FORWARD_REF_TYPE = hasSymbol ? Symbol.for('react.forward_ref') : 0xead0;
+    var REACT_SUSPENSE_TYPE = hasSymbol ? Symbol.for('react.suspense') : 0xead1;
+    var REACT_SUSPENSE_LIST_TYPE = hasSymbol ? Symbol.for('react.suspense_list') : 0xead8;
+    var REACT_MEMO_TYPE = hasSymbol ? Symbol.for('react.memo') : 0xead3;
+    var REACT_LAZY_TYPE = hasSymbol ? Symbol.for('react.lazy') : 0xead4;
+    var REACT_BLOCK_TYPE = hasSymbol ? Symbol.for('react.block') : 0xead9;
+    var REACT_FUNDAMENTAL_TYPE = hasSymbol ? Symbol.for('react.fundamental') : 0xead5;
+    var REACT_RESPONDER_TYPE = hasSymbol ? Symbol.for('react.responder') : 0xead6;
+    var REACT_SCOPE_TYPE = hasSymbol ? Symbol.for('react.scope') : 0xead7;
+
+    function isValidElementType(type) {
+      return typeof type === 'string' || typeof type === 'function' || // Note: its typeof might be other than 'symbol' or 'number' if it's a polyfill.
+      type === REACT_FRAGMENT_TYPE || type === REACT_CONCURRENT_MODE_TYPE || type === REACT_PROFILER_TYPE || type === REACT_STRICT_MODE_TYPE || type === REACT_SUSPENSE_TYPE || type === REACT_SUSPENSE_LIST_TYPE || typeof type === 'object' && type !== null && (type.$$typeof === REACT_LAZY_TYPE || type.$$typeof === REACT_MEMO_TYPE || type.$$typeof === REACT_PROVIDER_TYPE || type.$$typeof === REACT_CONTEXT_TYPE || type.$$typeof === REACT_FORWARD_REF_TYPE || type.$$typeof === REACT_FUNDAMENTAL_TYPE || type.$$typeof === REACT_RESPONDER_TYPE || type.$$typeof === REACT_SCOPE_TYPE || type.$$typeof === REACT_BLOCK_TYPE);
+    }
+
+    function typeOf(object) {
+      if (typeof object === 'object' && object !== null) {
+        var $$typeof = object.$$typeof;
+
+        switch ($$typeof) {
+          case REACT_ELEMENT_TYPE:
+            var type = object.type;
+
+            switch (type) {
+              case REACT_ASYNC_MODE_TYPE:
+              case REACT_CONCURRENT_MODE_TYPE:
+              case REACT_FRAGMENT_TYPE:
+              case REACT_PROFILER_TYPE:
+              case REACT_STRICT_MODE_TYPE:
+              case REACT_SUSPENSE_TYPE:
+                return type;
+
+              default:
+                var $$typeofType = type && type.$$typeof;
+
+                switch ($$typeofType) {
+                  case REACT_CONTEXT_TYPE:
+                  case REACT_FORWARD_REF_TYPE:
+                  case REACT_LAZY_TYPE:
+                  case REACT_MEMO_TYPE:
+                  case REACT_PROVIDER_TYPE:
+                    return $$typeofType;
+
+                  default:
+                    return $$typeof;
+                }
+
+            }
+
+          case REACT_PORTAL_TYPE:
+            return $$typeof;
+        }
+      }
+
+      return undefined;
+    } // AsyncMode is deprecated along with isAsyncMode
+
+
+    var AsyncMode = REACT_ASYNC_MODE_TYPE;
+    var ConcurrentMode = REACT_CONCURRENT_MODE_TYPE;
+    var ContextConsumer = REACT_CONTEXT_TYPE;
+    var ContextProvider = REACT_PROVIDER_TYPE;
+    var Element = REACT_ELEMENT_TYPE;
+    var ForwardRef = REACT_FORWARD_REF_TYPE;
+    var Fragment = REACT_FRAGMENT_TYPE;
+    var Lazy = REACT_LAZY_TYPE;
+    var Memo = REACT_MEMO_TYPE;
+    var Portal = REACT_PORTAL_TYPE;
+    var Profiler = REACT_PROFILER_TYPE;
+    var StrictMode = REACT_STRICT_MODE_TYPE;
+    var Suspense = REACT_SUSPENSE_TYPE;
+    var hasWarnedAboutDeprecatedIsAsyncMode = false; // AsyncMode should be deprecated
+
+    function isAsyncMode(object) {
+      {
+        if (!hasWarnedAboutDeprecatedIsAsyncMode) {
+          hasWarnedAboutDeprecatedIsAsyncMode = true; // Using console['warn'] to evade Babel and ESLint
+
+          console['warn']('The ReactIs.isAsyncMode() alias has been deprecated, ' + 'and will be removed in React 17+. Update your code to use ' + 'ReactIs.isConcurrentMode() instead. It has the exact same API.');
+        }
+      }
+      return isConcurrentMode(object) || typeOf(object) === REACT_ASYNC_MODE_TYPE;
+    }
+
+    function isConcurrentMode(object) {
+      return typeOf(object) === REACT_CONCURRENT_MODE_TYPE;
+    }
+
+    function isContextConsumer(object) {
+      return typeOf(object) === REACT_CONTEXT_TYPE;
+    }
+
+    function isContextProvider(object) {
+      return typeOf(object) === REACT_PROVIDER_TYPE;
+    }
+
+    function isElement(object) {
+      return typeof object === 'object' && object !== null && object.$$typeof === REACT_ELEMENT_TYPE;
+    }
+
+    function isForwardRef(object) {
+      return typeOf(object) === REACT_FORWARD_REF_TYPE;
+    }
+
+    function isFragment(object) {
+      return typeOf(object) === REACT_FRAGMENT_TYPE;
+    }
+
+    function isLazy(object) {
+      return typeOf(object) === REACT_LAZY_TYPE;
+    }
+
+    function isMemo(object) {
+      return typeOf(object) === REACT_MEMO_TYPE;
+    }
+
+    function isPortal(object) {
+      return typeOf(object) === REACT_PORTAL_TYPE;
+    }
+
+    function isProfiler(object) {
+      return typeOf(object) === REACT_PROFILER_TYPE;
+    }
+
+    function isStrictMode(object) {
+      return typeOf(object) === REACT_STRICT_MODE_TYPE;
+    }
+
+    function isSuspense(object) {
+      return typeOf(object) === REACT_SUSPENSE_TYPE;
+    }
+
+    exports.AsyncMode = AsyncMode;
+    exports.ConcurrentMode = ConcurrentMode;
+    exports.ContextConsumer = ContextConsumer;
+    exports.ContextProvider = ContextProvider;
+    exports.Element = Element;
+    exports.ForwardRef = ForwardRef;
+    exports.Fragment = Fragment;
+    exports.Lazy = Lazy;
+    exports.Memo = Memo;
+    exports.Portal = Portal;
+    exports.Profiler = Profiler;
+    exports.StrictMode = StrictMode;
+    exports.Suspense = Suspense;
+    exports.isAsyncMode = isAsyncMode;
+    exports.isConcurrentMode = isConcurrentMode;
+    exports.isContextConsumer = isContextConsumer;
+    exports.isContextProvider = isContextProvider;
+    exports.isElement = isElement;
+    exports.isForwardRef = isForwardRef;
+    exports.isFragment = isFragment;
+    exports.isLazy = isLazy;
+    exports.isMemo = isMemo;
+    exports.isPortal = isPortal;
+    exports.isProfiler = isProfiler;
+    exports.isStrictMode = isStrictMode;
+    exports.isSuspense = isSuspense;
+    exports.isValidElementType = isValidElementType;
+    exports.typeOf = typeOf;
+  })();
+}
+},{}],"node_modules/hoist-non-react-statics/node_modules/react-is/index.js":[function(require,module,exports) {
+'use strict';
+
+if ("development" === 'production') {
+  module.exports = require('./cjs/react-is.production.min.js');
+} else {
+  module.exports = require('./cjs/react-is.development.js');
+}
+},{"./cjs/react-is.development.js":"node_modules/hoist-non-react-statics/node_modules/react-is/cjs/react-is.development.js"}],"node_modules/hoist-non-react-statics/dist/hoist-non-react-statics.cjs.js":[function(require,module,exports) {
 'use strict';
 
 var reactIs = require('react-is');
@@ -32691,7 +33042,7 @@ function hoistNonReactStatics(targetComponent, sourceComponent, blacklist) {
 
 module.exports = hoistNonReactStatics;
 
-},{"react-is":"node_modules/react-is/index.js"}],"node_modules/react-router/esm/react-router.js":[function(require,module,exports) {
+},{"react-is":"node_modules/hoist-non-react-statics/node_modules/react-is/index.js"}],"node_modules/react-router/esm/react-router.js":[function(require,module,exports) {
 var global = arguments[3];
 "use strict";
 
@@ -33486,7 +33837,7 @@ if ("development" !== "production") {
     global[key] = "esm";
   }
 }
-},{"@babel/runtime/helpers/esm/inheritsLoose":"node_modules/@babel/runtime/helpers/esm/inheritsLoose.js","react":"node_modules/react/index.js","prop-types":"node_modules/prop-types/index.js","history":"node_modules/history/esm/history.js","tiny-warning":"node_modules/tiny-warning/dist/tiny-warning.esm.js","mini-create-react-context":"node_modules/mini-create-react-context/dist/esm/index.js","tiny-invariant":"node_modules/tiny-invariant/dist/tiny-invariant.esm.js","@babel/runtime/helpers/esm/extends":"node_modules/@babel/runtime/helpers/esm/extends.js","path-to-regexp":"node_modules/path-to-regexp/index.js","react-is":"node_modules/react-is/index.js","@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js","hoist-non-react-statics":"node_modules/hoist-non-react-statics/dist/hoist-non-react-statics.cjs.js"}],"node_modules/react-router-dom/esm/react-router-dom.js":[function(require,module,exports) {
+},{"@babel/runtime/helpers/esm/inheritsLoose":"node_modules/@babel/runtime/helpers/esm/inheritsLoose.js","react":"node_modules/react/index.js","prop-types":"node_modules/prop-types/index.js","history":"node_modules/history/esm/history.js","tiny-warning":"node_modules/tiny-warning/dist/tiny-warning.esm.js","mini-create-react-context":"node_modules/mini-create-react-context/dist/esm/index.js","tiny-invariant":"node_modules/tiny-invariant/dist/tiny-invariant.esm.js","@babel/runtime/helpers/esm/extends":"node_modules/@babel/runtime/helpers/esm/extends.js","path-to-regexp":"node_modules/path-to-regexp/index.js","react-is":"node_modules/react-router/node_modules/react-is/index.js","@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js","hoist-non-react-statics":"node_modules/hoist-non-react-statics/dist/hoist-non-react-statics.cjs.js"}],"node_modules/react-router-dom/esm/react-router-dom.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -33936,7 +34287,250 @@ module.exports = [{
   "alt": "Money Heist on Netflix",
   "direction": "row"
 }];
-},{}],"node_modules/shallowequal/index.js":[function(require,module,exports) {
+},{}],"node_modules/react-is/cjs/react-is.development.js":[function(require,module,exports) {
+/** @license React v17.0.1
+ * react-is.development.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+'use strict';
+
+if ("development" !== "production") {
+  (function () {
+    'use strict'; // ATTENTION
+    // When adding new symbols to this file,
+    // Please consider also adding to 'react-devtools-shared/src/backend/ReactSymbols'
+    // The Symbol used to tag the ReactElement-like types. If there is no native Symbol
+    // nor polyfill, then a plain number is used for performance.
+
+    var REACT_ELEMENT_TYPE = 0xeac7;
+    var REACT_PORTAL_TYPE = 0xeaca;
+    var REACT_FRAGMENT_TYPE = 0xeacb;
+    var REACT_STRICT_MODE_TYPE = 0xeacc;
+    var REACT_PROFILER_TYPE = 0xead2;
+    var REACT_PROVIDER_TYPE = 0xeacd;
+    var REACT_CONTEXT_TYPE = 0xeace;
+    var REACT_FORWARD_REF_TYPE = 0xead0;
+    var REACT_SUSPENSE_TYPE = 0xead1;
+    var REACT_SUSPENSE_LIST_TYPE = 0xead8;
+    var REACT_MEMO_TYPE = 0xead3;
+    var REACT_LAZY_TYPE = 0xead4;
+    var REACT_BLOCK_TYPE = 0xead9;
+    var REACT_SERVER_BLOCK_TYPE = 0xeada;
+    var REACT_FUNDAMENTAL_TYPE = 0xead5;
+    var REACT_SCOPE_TYPE = 0xead7;
+    var REACT_OPAQUE_ID_TYPE = 0xeae0;
+    var REACT_DEBUG_TRACING_MODE_TYPE = 0xeae1;
+    var REACT_OFFSCREEN_TYPE = 0xeae2;
+    var REACT_LEGACY_HIDDEN_TYPE = 0xeae3;
+
+    if (typeof Symbol === 'function' && Symbol.for) {
+      var symbolFor = Symbol.for;
+      REACT_ELEMENT_TYPE = symbolFor('react.element');
+      REACT_PORTAL_TYPE = symbolFor('react.portal');
+      REACT_FRAGMENT_TYPE = symbolFor('react.fragment');
+      REACT_STRICT_MODE_TYPE = symbolFor('react.strict_mode');
+      REACT_PROFILER_TYPE = symbolFor('react.profiler');
+      REACT_PROVIDER_TYPE = symbolFor('react.provider');
+      REACT_CONTEXT_TYPE = symbolFor('react.context');
+      REACT_FORWARD_REF_TYPE = symbolFor('react.forward_ref');
+      REACT_SUSPENSE_TYPE = symbolFor('react.suspense');
+      REACT_SUSPENSE_LIST_TYPE = symbolFor('react.suspense_list');
+      REACT_MEMO_TYPE = symbolFor('react.memo');
+      REACT_LAZY_TYPE = symbolFor('react.lazy');
+      REACT_BLOCK_TYPE = symbolFor('react.block');
+      REACT_SERVER_BLOCK_TYPE = symbolFor('react.server.block');
+      REACT_FUNDAMENTAL_TYPE = symbolFor('react.fundamental');
+      REACT_SCOPE_TYPE = symbolFor('react.scope');
+      REACT_OPAQUE_ID_TYPE = symbolFor('react.opaque.id');
+      REACT_DEBUG_TRACING_MODE_TYPE = symbolFor('react.debug_trace_mode');
+      REACT_OFFSCREEN_TYPE = symbolFor('react.offscreen');
+      REACT_LEGACY_HIDDEN_TYPE = symbolFor('react.legacy_hidden');
+    } // Filter certain DOM attributes (e.g. src, href) if their values are empty strings.
+
+
+    var enableScopeAPI = false; // Experimental Create Event Handle API.
+
+    function isValidElementType(type) {
+      if (typeof type === 'string' || typeof type === 'function') {
+        return true;
+      } // Note: typeof might be other than 'symbol' or 'number' (e.g. if it's a polyfill).
+
+
+      if (type === REACT_FRAGMENT_TYPE || type === REACT_PROFILER_TYPE || type === REACT_DEBUG_TRACING_MODE_TYPE || type === REACT_STRICT_MODE_TYPE || type === REACT_SUSPENSE_TYPE || type === REACT_SUSPENSE_LIST_TYPE || type === REACT_LEGACY_HIDDEN_TYPE || enableScopeAPI) {
+        return true;
+      }
+
+      if (typeof type === 'object' && type !== null) {
+        if (type.$$typeof === REACT_LAZY_TYPE || type.$$typeof === REACT_MEMO_TYPE || type.$$typeof === REACT_PROVIDER_TYPE || type.$$typeof === REACT_CONTEXT_TYPE || type.$$typeof === REACT_FORWARD_REF_TYPE || type.$$typeof === REACT_FUNDAMENTAL_TYPE || type.$$typeof === REACT_BLOCK_TYPE || type[0] === REACT_SERVER_BLOCK_TYPE) {
+          return true;
+        }
+      }
+
+      return false;
+    }
+
+    function typeOf(object) {
+      if (typeof object === 'object' && object !== null) {
+        var $$typeof = object.$$typeof;
+
+        switch ($$typeof) {
+          case REACT_ELEMENT_TYPE:
+            var type = object.type;
+
+            switch (type) {
+              case REACT_FRAGMENT_TYPE:
+              case REACT_PROFILER_TYPE:
+              case REACT_STRICT_MODE_TYPE:
+              case REACT_SUSPENSE_TYPE:
+              case REACT_SUSPENSE_LIST_TYPE:
+                return type;
+
+              default:
+                var $$typeofType = type && type.$$typeof;
+
+                switch ($$typeofType) {
+                  case REACT_CONTEXT_TYPE:
+                  case REACT_FORWARD_REF_TYPE:
+                  case REACT_LAZY_TYPE:
+                  case REACT_MEMO_TYPE:
+                  case REACT_PROVIDER_TYPE:
+                    return $$typeofType;
+
+                  default:
+                    return $$typeof;
+                }
+
+            }
+
+          case REACT_PORTAL_TYPE:
+            return $$typeof;
+        }
+      }
+
+      return undefined;
+    }
+
+    var ContextConsumer = REACT_CONTEXT_TYPE;
+    var ContextProvider = REACT_PROVIDER_TYPE;
+    var Element = REACT_ELEMENT_TYPE;
+    var ForwardRef = REACT_FORWARD_REF_TYPE;
+    var Fragment = REACT_FRAGMENT_TYPE;
+    var Lazy = REACT_LAZY_TYPE;
+    var Memo = REACT_MEMO_TYPE;
+    var Portal = REACT_PORTAL_TYPE;
+    var Profiler = REACT_PROFILER_TYPE;
+    var StrictMode = REACT_STRICT_MODE_TYPE;
+    var Suspense = REACT_SUSPENSE_TYPE;
+    var hasWarnedAboutDeprecatedIsAsyncMode = false;
+    var hasWarnedAboutDeprecatedIsConcurrentMode = false; // AsyncMode should be deprecated
+
+    function isAsyncMode(object) {
+      {
+        if (!hasWarnedAboutDeprecatedIsAsyncMode) {
+          hasWarnedAboutDeprecatedIsAsyncMode = true; // Using console['warn'] to evade Babel and ESLint
+
+          console['warn']('The ReactIs.isAsyncMode() alias has been deprecated, ' + 'and will be removed in React 18+.');
+        }
+      }
+      return false;
+    }
+
+    function isConcurrentMode(object) {
+      {
+        if (!hasWarnedAboutDeprecatedIsConcurrentMode) {
+          hasWarnedAboutDeprecatedIsConcurrentMode = true; // Using console['warn'] to evade Babel and ESLint
+
+          console['warn']('The ReactIs.isConcurrentMode() alias has been deprecated, ' + 'and will be removed in React 18+.');
+        }
+      }
+      return false;
+    }
+
+    function isContextConsumer(object) {
+      return typeOf(object) === REACT_CONTEXT_TYPE;
+    }
+
+    function isContextProvider(object) {
+      return typeOf(object) === REACT_PROVIDER_TYPE;
+    }
+
+    function isElement(object) {
+      return typeof object === 'object' && object !== null && object.$$typeof === REACT_ELEMENT_TYPE;
+    }
+
+    function isForwardRef(object) {
+      return typeOf(object) === REACT_FORWARD_REF_TYPE;
+    }
+
+    function isFragment(object) {
+      return typeOf(object) === REACT_FRAGMENT_TYPE;
+    }
+
+    function isLazy(object) {
+      return typeOf(object) === REACT_LAZY_TYPE;
+    }
+
+    function isMemo(object) {
+      return typeOf(object) === REACT_MEMO_TYPE;
+    }
+
+    function isPortal(object) {
+      return typeOf(object) === REACT_PORTAL_TYPE;
+    }
+
+    function isProfiler(object) {
+      return typeOf(object) === REACT_PROFILER_TYPE;
+    }
+
+    function isStrictMode(object) {
+      return typeOf(object) === REACT_STRICT_MODE_TYPE;
+    }
+
+    function isSuspense(object) {
+      return typeOf(object) === REACT_SUSPENSE_TYPE;
+    }
+
+    exports.ContextConsumer = ContextConsumer;
+    exports.ContextProvider = ContextProvider;
+    exports.Element = Element;
+    exports.ForwardRef = ForwardRef;
+    exports.Fragment = Fragment;
+    exports.Lazy = Lazy;
+    exports.Memo = Memo;
+    exports.Portal = Portal;
+    exports.Profiler = Profiler;
+    exports.StrictMode = StrictMode;
+    exports.Suspense = Suspense;
+    exports.isAsyncMode = isAsyncMode;
+    exports.isConcurrentMode = isConcurrentMode;
+    exports.isContextConsumer = isContextConsumer;
+    exports.isContextProvider = isContextProvider;
+    exports.isElement = isElement;
+    exports.isForwardRef = isForwardRef;
+    exports.isFragment = isFragment;
+    exports.isLazy = isLazy;
+    exports.isMemo = isMemo;
+    exports.isPortal = isPortal;
+    exports.isProfiler = isProfiler;
+    exports.isStrictMode = isStrictMode;
+    exports.isSuspense = isSuspense;
+    exports.isValidElementType = isValidElementType;
+    exports.typeOf = typeOf;
+  })();
+}
+},{}],"node_modules/react-is/index.js":[function(require,module,exports) {
+'use strict';
+
+if ("development" === 'production') {
+  module.exports = require('./cjs/react-is.production.min.js');
+} else {
+  module.exports = require('./cjs/react-is.development.js');
+}
+},{"./cjs/react-is.development.js":"node_modules/react-is/cjs/react-is.development.js"}],"node_modules/shallowequal/index.js":[function(require,module,exports) {
 //
 
 module.exports = function shallowEqual(objA, objB, compare, compareContext) {
@@ -37587,13 +38181,133 @@ OptForm.Text = function OptFormText(_ref5) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.Logo = exports.ButtonLink = exports.Link = exports.Container = exports.Background = void 0;
+exports.Profile = exports.Dropdown = exports.Picture = exports.SearchInput = exports.SearchIcon = exports.Search = exports.PlayButton = exports.FeatureCallOut = exports.Feature = exports.Frame = exports.Text = exports.Group = exports.Logo = exports.ButtonLink = exports.Link = exports.Container = exports.Background = void 0;
 
 var _styledComponents = _interopRequireDefault(require("styled-components"));
 
 var _reactRouterDom = require("react-router-dom");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _templateObject17() {
+  var data = _taggedTemplateLiteral(["\n    display: flex;\n    align-items: center;\n    margin-left: 20px;\n    position: relative;\n    button {\n        cursor: pointer;\n    }\n    &:hover > ", " {\n        display: flex;\n        flex-direction: column;\n    }\n"]);
+
+  _templateObject17 = function _templateObject17() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject16() {
+  var data = _taggedTemplateLiteral(["\n    display: none;\n    position: absolute;\n    background-color: black;\n    padding: 10px;\n    width: 100px;\n    top: 32px;\n    right: 10px;\n    ", ":last-of-type ", " {\n        cursor: pointer;\n    }\n    ", " {\n        margin-bottom: 10px;\n        &:last-of-type {\n            margin-bottom: 0;\n        }\n        ", ", ", " {\n            cursor: default;\n        }\n    }\n    button {\n        margin-right: 10px;\n    }\n    p {\n        font-size: 12px;\n        margin-bottom: 0;\n        margin-top: 0;\n    }\n"]);
+
+  _templateObject16 = function _templateObject16() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject15() {
+  var data = _taggedTemplateLiteral(["\n    background: url(", ");\n    background-size: contain;\n    border: 0;\n    width: 32px;\n    height: 32px;\n    cursor: pointer;\n"]);
+
+  _templateObject15 = function _templateObject15() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject14() {
+  var data = _taggedTemplateLiteral(["\n    background-color: #44444459;\n    color: white;\n    border: 1px solid white;\n    transition: width 0.5s;\n    height: 30px;\n    font-size: 14px;\n    margin-left: ", ";\n    padding: ", ";\n    opacity: ", ";\n    width: ", ";\n"]);
+
+  _templateObject14 = function _templateObject14() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject13() {
+  var data = _taggedTemplateLiteral(["\n    cursor: pointer;\n    background-color: transparent;\n    border: 0;\n    img {\n        filter: brightness(0) invert(1);\n        width: 16px;\n    }\n"]);
+
+  _templateObject13 = function _templateObject13() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject12() {
+  var data = _taggedTemplateLiteral(["\n    display: flex;\n    align-items: center;\n    @media (max-width: 700px) {\n        display: none;\n    }\n"]);
+
+  _templateObject12 = function _templateObject12() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject11() {
+  var data = _taggedTemplateLiteral(["\n    box-shadow: 0 0.6vw 1vw -0.4vw rgba(0, 0, 0, 0.35);\n    background-color: #e6e6e6;\n    color: #000;\n    border-width: 0;\n    padding: 10px 20px;\n    border-radius: 5px;\n    max-width: 130px;\n    font-weight: bold;\n    font-size: 20px;\n    margin-top: 10px;\n    cursor: pointer;\n    transition: background-color 0.5s ease;\n    &:hover {\n        background: #ff1e1e;\n        color: white;\n    }\n"]);
+
+  _templateObject11 = function _templateObject11() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject10() {
+  var data = _taggedTemplateLiteral(["\n    color: white;\n    font-size: 50px;\n    line-height: normal;\n    font-weight: bold;\n    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.45);\n    margin: 0;\n"]);
+
+  _templateObject10 = function _templateObject10() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject9() {
+  var data = _taggedTemplateLiteral(["\n    padding: 150px 0 500px 0;\n    flex-direction: column;\n    align-items: normal;\n    width: 50%;\n    @media (max-width: 1100px) {\n        display: none;\n    }\n"]);
+
+  _templateObject9 = function _templateObject9() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject8() {
+  var data = _taggedTemplateLiteral([""]);
+
+  _templateObject8 = function _templateObject8() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject7() {
+  var data = _taggedTemplateLiteral(["\n    color: white;\n    font-size: 22px;\n    line-height: normal;\n    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.45);\n"]);
+
+  _templateObject7 = function _templateObject7() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject6() {
+  var data = _taggedTemplateLiteral(["\n    display: flex;\n    align-items: center;\n"]);
+
+  _templateObject6 = function _templateObject6() {
+    return data;
+  };
+
+  return data;
+}
 
 function _templateObject5() {
   var data = _taggedTemplateLiteral(["\n    height: 32px;\n    width: 108px;\n    margin-right: 40px;\n    @media (min-width: 1449px) {\n        height: 45px;\n        width: 167px;\n    }\n"]);
@@ -37673,6 +38387,67 @@ exports.ButtonLink = ButtonLink;
 var Logo = _styledComponents.default.img(_templateObject5());
 
 exports.Logo = Logo;
+
+var Group = _styledComponents.default.div(_templateObject6());
+
+exports.Group = Group;
+
+var Text = _styledComponents.default.p(_templateObject7());
+
+exports.Text = Text;
+
+var Frame = _styledComponents.default.div(_templateObject8());
+
+exports.Frame = Frame;
+var Feature = (0, _styledComponents.default)(Container)(_templateObject9());
+exports.Feature = Feature;
+
+var FeatureCallOut = _styledComponents.default.h2(_templateObject10());
+
+exports.FeatureCallOut = FeatureCallOut;
+
+var PlayButton = _styledComponents.default.button(_templateObject11());
+
+exports.PlayButton = PlayButton;
+
+var Search = _styledComponents.default.div(_templateObject12());
+
+exports.Search = Search;
+
+var SearchIcon = _styledComponents.default.button(_templateObject13());
+
+exports.SearchIcon = SearchIcon;
+
+var SearchInput = _styledComponents.default.input(_templateObject14(), function (_ref4) {
+  var active = _ref4.active;
+  return active === true ? '10px' : '0';
+}, function (_ref5) {
+  var active = _ref5.active;
+  return active === true ? '0 10px' : '0';
+}, function (_ref6) {
+  var active = _ref6.active;
+  return active === true ? '1' : '0';
+}, function (_ref7) {
+  var active = _ref7.active;
+  return active === true ? '200px' : '0px';
+});
+
+exports.SearchInput = SearchInput;
+
+var Picture = _styledComponents.default.button(_templateObject15(), function (_ref8) {
+  var src = _ref8.src;
+  return src;
+});
+
+exports.Picture = Picture;
+
+var Dropdown = _styledComponents.default.div(_templateObject16(), Group, Link, Group, Link, Picture);
+
+exports.Dropdown = Dropdown;
+
+var Profile = _styledComponents.default.div(_templateObject17(), Dropdown);
+
+exports.Profile = Profile;
 },{"styled-components":"node_modules/styled-components/dist/styled-components.browser.esm.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js"}],"src/components/header/index.js":[function(require,module,exports) {
 "use strict";
 
@@ -37681,13 +38456,29 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = Header;
 
-var _react = _interopRequireDefault(require("react"));
+var _react = _interopRequireWildcard(require("react"));
 
 var _reactRouterDom = require("react-router-dom");
 
 var _header = require("./styles/header");
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
 
@@ -37702,41 +38493,127 @@ function Header(_ref) {
   return bg ? /*#__PURE__*/_react.default.createElement(_header.Background, resProps, children) : children;
 }
 
-Header.Frame = function HeaderFrame(_ref2) {
+Header.PlayButton = function HeaderPlayButton(_ref2) {
   var children = _ref2.children,
       resProps = _objectWithoutProperties(_ref2, ["children"]);
 
-  return /*#__PURE__*/_react.default.createElement(_header.Container, resProps, children);
+  return /*#__PURE__*/_react.default.createElement(PlayButton, resProps, children);
 };
 
-Header.Logo = function HeaderLogo(_ref3) {
-  var to = _ref3.to,
-      resProps = _objectWithoutProperties(_ref3, ["to"]);
+Header.Frame = function HeaderFrame(_ref3) {
+  var children = _ref3.children,
+      resProps = _objectWithoutProperties(_ref3, ["children"]);
+
+  return /*#__PURE__*/_react.default.createElement(_header.Frame, resProps, children);
+};
+
+Header.Group = function HeaderGroup(_ref4) {
+  var children = _ref4.children,
+      resProps = _objectWithoutProperties(_ref4, ["children"]);
+
+  return /*#__PURE__*/_react.default.createElement(_header.Group, resProps, children);
+};
+
+Header.Logo = function HeaderLogo(_ref5) {
+  var to = _ref5.to,
+      resProps = _objectWithoutProperties(_ref5, ["to"]);
 
   return /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
     to: to
   }, /*#__PURE__*/_react.default.createElement(_header.Logo, resProps));
 };
 
-Header.ButtonLink = function HeaderButtonLink(_ref4) {
-  var children = _ref4.children,
-      resProps = _objectWithoutProperties(_ref4, ["children"]);
+Header.ButtonLink = function HeaderButtonLink(_ref6) {
+  var children = _ref6.children,
+      resProps = _objectWithoutProperties(_ref6, ["children"]);
 
   return /*#__PURE__*/_react.default.createElement(_header.ButtonLink, resProps, children);
 };
 
-Header.Title = function HeaderTitle(_ref5) {
-  var children = _ref5.children,
-      resProps = _objectWithoutProperties(_ref5, ["children"]);
+Header.Title = function HeaderTitle(_ref7) {
+  var children = _ref7.children,
+      resProps = _objectWithoutProperties(_ref7, ["children"]);
 
   return /*#__PURE__*/_react.default.createElement(_header.Title, resProps, children);
 };
 
-Header.Text = function HeaderText(_ref6) {
-  var children = _ref6.children,
-      resProps = _objectWithoutProperties(_ref6, ["children"]);
+Header.Text = function HeaderText(_ref8) {
+  var children = _ref8.children,
+      resProps = _objectWithoutProperties(_ref8, ["children"]);
 
   return /*#__PURE__*/_react.default.createElement(_header.Text, resProps, children);
+};
+
+Header.Link = function HeaderLink(_ref9) {
+  var children = _ref9.children,
+      resProps = _objectWithoutProperties(_ref9, ["children"]);
+
+  return /*#__PURE__*/_react.default.createElement(_header.Link, resProps, children);
+};
+
+Header.Feature = function HeaderFeature(_ref10) {
+  var children = _ref10.children,
+      resProps = _objectWithoutProperties(_ref10, ["children"]);
+
+  return /*#__PURE__*/_react.default.createElement(Feature, resProps, children);
+};
+
+Header.FeatureCallOut = function HeaderFeatureCallOut(_ref11) {
+  var children = _ref11.children,
+      resProps = _objectWithoutProperties(_ref11, ["children"]);
+
+  return /*#__PURE__*/_react.default.createElement(FeatureCallOut, resProps, children);
+};
+
+Header.Search = function HeaderSearch(_ref12) {
+  var searchTerm = _ref12.searchTerm,
+      setSearchTerm = _ref12.setSearchTerm,
+      resProps = _objectWithoutProperties(_ref12, ["searchTerm", "setSearchTerm"]);
+
+  var _useState = (0, _react.useState)(false),
+      _useState2 = _slicedToArray(_useState, 2),
+      searchActive = _useState2[0],
+      setSearchActive = _useState2[1];
+
+  return /*#__PURE__*/_react.default.createElement(_header.Search, resProps, /*#__PURE__*/_react.default.createElement(_header.SearchIcon, {
+    onClick: function onClick() {
+      return setSearchActive(!searchActive);
+    }
+  }, /*#__PURE__*/_react.default.createElement("img", {
+    scr: "images/icons/search.png",
+    alt: "Seacrh"
+  })), /*#__PURE__*/_react.default.createElement(_header.SearchInput, {
+    value: searchTerm,
+    onChange: function onChange(_ref13) {
+      var target = _ref13.target;
+      return setSearchTerm(target.value);
+    },
+    placeholder: "Search files and series",
+    active: searchActive
+  }));
+};
+
+Header.Picture = function HeaderPicture(_ref14) {
+  var src = _ref14.src,
+      resProps = _objectWithoutProperties(_ref14, ["src"]);
+
+  return /*#__PURE__*/_react.default.createElement(_header.Picture, _extends({}, resProps, {
+    src: "image/user/".concat(src, ".png")
+  }));
+};
+
+Header.Profile = function HeaderProfile(_ref15) {
+  var children = _ref15.children,
+      resProps = _objectWithoutProperties(_ref15, ["children"]);
+
+  return /*#__PURE__*/_react.default.createElement(_header.Profile, resProps, children);
+};
+
+Header.Dropdown = function HeaderDropdown(_ref16) {
+  var children = _ref16.children,
+      resProps = _objectWithoutProperties(_ref16, ["children"]);
+
+  return /*#__PURE__*/_react.default.createElement(_header.Dropdown, resProps, children);
 };
 },{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","./styles/header":"src/components/header/styles/header.js"}],"src/components/feature/styles/feature.js":[function(require,module,exports) {
 "use strict";
@@ -38425,7 +39302,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = HeaderContainer;
 
-var _react = _interopRequireWildcard(require("react"));
+var _react = _interopRequireDefault(require("react"));
 
 var _components = require("../components");
 
@@ -38434,6 +39311,8 @@ var ROUTES = _interopRequireWildcard(require("../constants/routes"));
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function HeaderContainer(_ref) {
   var children = _ref.children;
@@ -38472,7 +39351,19 @@ function Home() {
     placeholder: "Email adress"
   }), /*#__PURE__*/_react.default.createElement(_components.OptForm.Button, null, "Try it now"), /*#__PURE__*/_react.default.createElement(_components.OptForm.Text, null, "Ready to watch? Enter your email to create or restart your membership.")))), /*#__PURE__*/_react.default.createElement(_jumbotron.default, null), /*#__PURE__*/_react.default.createElement(_faqs.default, null), /*#__PURE__*/_react.default.createElement(_footer.default, null));
 }
-},{"react":"node_modules/react/index.js","../containers/jumbotron":"src/containers/jumbotron.js","../containers/footer":"src/containers/footer.js","../containers/faqs":"src/containers/faqs.js","../containers/header":"src/containers/header.js","../components":"src/components/index.js"}],"src/pages/signin.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","../containers/jumbotron":"src/containers/jumbotron.js","../containers/footer":"src/containers/footer.js","../containers/faqs":"src/containers/faqs.js","../containers/header":"src/containers/header.js","../components":"src/components/index.js"}],"src/context/firebase.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.FirebaseContext = void 0;
+
+var _react = require("react");
+
+var FirebaseContext = (0, _react.createContext)(null);
+exports.FirebaseContext = FirebaseContext;
+},{"react":"node_modules/react/index.js"}],"src/pages/signin.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -38482,11 +39373,17 @@ exports.default = Signin;
 
 var _react = _interopRequireWildcard(require("react"));
 
+var _reactRouterDom = require("react-router-dom");
+
 var _components = require("../components");
 
 var _header = _interopRequireDefault(require("../containers/header"));
 
 var _footer = _interopRequireDefault(require("../containers/footer"));
+
+var ROUTES = _interopRequireWildcard(require("../constants/routes"));
+
+var _firebase = require("../context/firebase");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -38522,10 +39419,23 @@ function Signin() {
       password = _useState6[0],
       setPassword = _useState6[1];
 
+  var history = (0, _reactRouterDom.useHistory)();
+
+  var _useContext = (0, _react.useContext)(_firebase.FirebaseContext),
+      firebase = _useContext.firebase;
+
   var isInvalid = password === '' | emailAdress === '';
 
   var handleSignin = function handleSignin(event) {
     event.preventDefault();
+    firebase.auth().signInWithEmailAndPassword(emailAdress, password).then(function () {
+      setEmailAdress('');
+      setPassword('');
+      setError('');
+      history.push(ROUTES.BROWSE);
+    }).catch(function (error) {
+      return setError(error.message);
+    });
   };
 
   return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(_header.default, null, /*#__PURE__*/_react.default.createElement(_components.Form, null, /*#__PURE__*/_react.default.createElement(_components.Form.Title, null, "Sign In"), error && /*#__PURE__*/_react.default.createElement(_components.Form.Error, null, error), /*#__PURE__*/_react.default.createElement(_components.Form.Base, {
@@ -38554,7 +39464,7 @@ function Signin() {
     to: "/signup"
   }, "Sign Up now")), /*#__PURE__*/_react.default.createElement(_components.Form.TextSmall, null, "This page is protected by Google reCAPTCHA")))), /*#__PURE__*/_react.default.createElement(_footer.default, null));
 }
-},{"react":"node_modules/react/index.js","../components":"src/components/index.js","../containers/header":"src/containers/header.js","../containers/footer":"src/containers/footer.js"}],"src/pages/signup.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","../components":"src/components/index.js","../containers/header":"src/containers/header.js","../containers/footer":"src/containers/footer.js","../constants/routes":"src/constants/routes.js","../context/firebase":"src/context/firebase.js"}],"src/pages/signup.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -38563,6 +39473,10 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = Signup;
 
 var _react = _interopRequireWildcard(require("react"));
+
+var _reactRouterDom = require("react-router-dom");
+
+var _firebase = require("../context/firebase");
 
 var _header = _interopRequireDefault(require("../containers/header"));
 
@@ -38591,6 +39505,11 @@ function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 function Signup() {
+  var history = (0, _reactRouterDom.useHistory)();
+
+  var _useContext = (0, _react.useContext)(_firebase.FirebaseContext),
+      firebase = _useContext.firebase;
+
   var _useState = (0, _react.useState)(''),
       _useState2 = _slicedToArray(_useState, 2),
       firstName = _useState2[0],
@@ -38598,71 +39517,74 @@ function Signup() {
 
   var _useState3 = (0, _react.useState)(''),
       _useState4 = _slicedToArray(_useState3, 2),
-      error = _useState4[0],
-      setError = _useState4[1];
+      emailAddress = _useState4[0],
+      setEmailAddress = _useState4[1];
 
   var _useState5 = (0, _react.useState)(''),
       _useState6 = _slicedToArray(_useState5, 2),
-      emailAdress = _useState6[0],
-      setEmailAdress = _useState6[1];
+      password = _useState6[0],
+      setPassword = _useState6[1];
 
   var _useState7 = (0, _react.useState)(''),
       _useState8 = _slicedToArray(_useState7, 2),
-      password = _useState8[0],
-      setPassword = _useState8[1];
+      error = _useState8[0],
+      setError = _useState8[1]; // form validation
 
-  var isInvalid = firstName === '' | password === '' | emailAdress === '';
 
-  var handleSignup = function handleSignup(event) {
+  var isInvalid = firstName === '' || password === '' || emailAddress === ''; // handleSignUp (takes the event)
+
+  var handleSignUp = function handleSignUp(event) {
     event.preventDefault();
-  };
+    firebase.auth().createUserWithEmailAndPassword(emailAddress, password).then(function (result) {
+      result.user.updateProfile({
+        displayName: firstName,
+        photoUrl: Math.floor(Math.random() * 5) + 1
+      }).then(function () {
+        setEmailAddress('');
+        setPassword('');
+        setError('');
+        history.push(ROUTES.BROWSE);
+      });
+    }).catch(function (error) {
+      return setError(error.message);
+    });
+  }; // try to do the markup
+
 
   return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(_header.default, null, /*#__PURE__*/_react.default.createElement(_components.Form, null, /*#__PURE__*/_react.default.createElement(_components.Form.Title, null, "Sign Up"), error && /*#__PURE__*/_react.default.createElement(_components.Form.Error, null, error), /*#__PURE__*/_react.default.createElement(_components.Form.Base, {
-    onSubmit: handleSignup,
+    onSubmit: handleSignUp,
     method: "POST"
   }, /*#__PURE__*/_react.default.createElement(_components.Form.Input, {
-    placeholder: "FirstName",
     value: firstName,
     onChange: function onChange(_ref) {
       var target = _ref.target;
       return setFirstName(target.value);
-    }
+    },
+    placeholder: "First Name"
   }), /*#__PURE__*/_react.default.createElement(_components.Form.Input, {
-    placeholder: "EmailAdress",
-    value: emailAdress,
+    value: emailAddress,
     onChange: function onChange(_ref2) {
       var target = _ref2.target;
-      return setEmailAdress(target.value);
-    }
+      return setEmailAddress(target.value);
+    },
+    placeholder: "Email Address"
   }), /*#__PURE__*/_react.default.createElement(_components.Form.Input, {
-    type: "password",
-    placeholder: "password",
-    autoComplete: "off",
     value: password,
+    type: "password",
+    autoComplete: "off",
     onChange: function onChange(_ref3) {
       var target = _ref3.target;
       return setPassword(target.value);
-    }
+    },
+    placeholder: "Password"
   }), /*#__PURE__*/_react.default.createElement(_components.Form.Submit, {
-    disabled: isInvalid,
-    type: "Submit"
-  }, "Sign Up"), /*#__PURE__*/_react.default.createElement(_components.Form.Text, null, "Already have an account ?\xA0", /*#__PURE__*/_react.default.createElement(_components.Form.Link, {
+    type: "submit",
+    disabled: isInvalid
+  }, "Sign Up"), /*#__PURE__*/_react.default.createElement(_components.Form.Text, null, "Already have another account?\xA0", /*#__PURE__*/_react.default.createElement(_components.Form.Link, {
     to: ROUTES.SIGN_IN
-  }, "Sign In")), /*#__PURE__*/_react.default.createElement(_components.Form.TextSmall, null, "This page is protected by Google reCAPTCHA")))), /*#__PURE__*/_react.default.createElement(_footer.default, null));
+  }, "Sign in.")), /*#__PURE__*/_react.default.createElement(_components.Form.TextSmall, null, "This page is protected by Google reCAPTCHA.")))), /*#__PURE__*/_react.default.createElement(_footer.default, null));
 }
-},{"react":"node_modules/react/index.js","../containers/header":"src/containers/header.js","../components":"src/components/index.js","../constants/routes":"src/constants/routes.js","../containers/footer":"src/containers/footer.js"}],"src/context/firebase.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.FirebaseContext = void 0;
-
-var _react = require("react");
-
-var FirebaseContext = (0, _react.createContext)(null);
-exports.FirebaseContext = FirebaseContext;
-},{"react":"node_modules/react/index.js"}],"src/containers/profiles.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","../context/firebase":"src/context/firebase.js","../containers/header":"src/containers/header.js","../components":"src/components/index.js","../constants/routes":"src/constants/routes.js","../containers/footer":"src/containers/footer.js"}],"src/containers/profiles.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -38698,9 +39620,9 @@ function SelectProfilesContainer(_ref) {
         photoUrl: user.photoUrl
       });
     }
-  }), /*#__PURE__*/_react.default.createElement(_components.Profiles.Picture, {
+  }, /*#__PURE__*/_react.default.createElement(_components.Profiles.Picture, {
     src: user.photoUrl
-  }), /*#__PURE__*/_react.default.createElement(_components.Profiles.Name, null, user.displayName))));
+  }), /*#__PURE__*/_react.default.createElement(_components.Profiles.Name, null, user.displayName)))));
 }
 },{"react":"node_modules/react/index.js","../components":"src/components/index.js","../constants/routes":"src/constants/routes.js"}],"src/containers/browse.js":[function(require,module,exports) {
 "use strict";
@@ -38712,7 +39634,7 @@ exports.BrowseContainer = BrowseContainer;
 
 var _react = _interopRequireWildcard(require("react"));
 
-var _header = require("./header");
+var _components = require("../components");
 
 var ROUTES = _interopRequireWildcard(require("../constants/routes"));
 
@@ -38746,16 +39668,56 @@ function BrowseContainer() {
       profile = _useState2[0],
       setProfile = _useState2[1];
 
+  var _useState3 = (0, _react.useState)('series'),
+      _useState4 = _slicedToArray(_useState3, 2),
+      category = _useState4[0],
+      setCategory = _useState4[1];
+
+  var _useState5 = (0, _react.useState)(""),
+      _useState6 = _slicedToArray(_useState5, 2),
+      searchTerm = _useState6[0],
+      setSearchTerm = _useState6[1];
+
+  var _useState7 = (0, _react.useState)(true),
+      _useState8 = _slicedToArray(_useState7, 2),
+      loading = _useState8[0],
+      setLoading = _useState8[1];
+
   var user = {
     displayName: "Laza",
     photoUrl: "1"
   };
-  return profile.displayName ? /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("p", null, "Browse Container"), /*#__PURE__*/_react.default.createElement(_footer.default, null)) : /*#__PURE__*/_react.default.createElement(_profiles.SelectProfilesContainer, {
+  return profile.displayName ? /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(_components.Header, {
+    src: "joke1",
+    dontShowOnSmallViewPort: true
+  }, /*#__PURE__*/_react.default.createElement(_components.Header.Frame, null, /*#__PURE__*/_react.default.createElement(_components.Header.Group, null, /*#__PURE__*/_react.default.createElement(_components.Header.Logo, {
+    to: ROUTES.HOME,
+    src: "/images/misc/logo.svg",
+    alt: "Netflix"
+  }), /*#__PURE__*/_react.default.createElement(_components.Header.Link, {
+    active: category === 'series' ? 'true' : 'false',
+    onClick: function onClick() {
+      return setCategory('series');
+    }
+  }, "Series"), /*#__PURE__*/_react.default.createElement(_components.Header.Link, {
+    active: category === 'films' ? 'true' : 'false',
+    onClick: function onClick() {
+      return setCategory('films');
+    }
+  }, "Films")), /*#__PURE__*/_react.default.createElement(_components.Header.Group, null, /*#__PURE__*/_react.default.createElement(_components.Header.Search, {
+    searchTerm: searchTerm
+  }), /*#__PURE__*/_react.default.createElement(_components.Header.Profile, null, /*#__PURE__*/_react.default.createElement(_components.Header.Picture, {
+    src: user.photoUrl
+  }), /*#__PURE__*/_react.default.createElement(_components.Header.Dropdown, null, /*#__PURE__*/_react.default.createElement(_components.Header.Group, null, /*#__PURE__*/_react.default.createElement(_components.Header.Picture, null, /*#__PURE__*/_react.default.createElement(_components.Header.TextLink, null, user.displayName))), /*#__PURE__*/_react.default.createElement(_components.Header.Group, null, /*#__PURE__*/_react.default.createElement(_components.Header.TextLink, {
+    onClick: function onClick() {
+      return _firebase.FirebaseContext.auth().signOut();
+    }
+  }, "Sign out")))))), /*#__PURE__*/_react.default.createElement(_components.Header.Feature, null, /*#__PURE__*/_react.default.createElement(_components.Header.FeatureCallOut, null, "Watch Joker now"), /*#__PURE__*/_react.default.createElement(_components.Header.Text, null, "Forever alone in a crowd, failed comedian Arthur Fleck seeks connection as he walks the streets of Gotham City. Arthur wears two masks -- the one he paints for his day job as a clown, and the guise he projects in a futile attempt to feel like he's part of the world around him"), /*#__PURE__*/_react.default.createElement(_components.Header.PlayButton, null, "Play"))), /*#__PURE__*/_react.default.createElement(_footer.default, null)) : /*#__PURE__*/_react.default.createElement(_profiles.SelectProfilesContainer, {
     user: user,
     setProfile: setProfile
   });
 }
-},{"react":"node_modules/react/index.js","./header":"src/containers/header.js","../constants/routes":"src/constants/routes.js","../context/firebase":"src/context/firebase.js","./profiles":"src/containers/profiles.js","./footer":"src/containers/footer.js"}],"src/pages/browse.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","../components":"src/components/index.js","../constants/routes":"src/constants/routes.js","../context/firebase":"src/context/firebase.js","./profiles":"src/containers/profiles.js","./footer":"src/containers/footer.js"}],"src/pages/browse.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -38885,13 +39847,12 @@ var _firebase = require("./context/firebase");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var config = {
-  apiKey: "AIzaSyDhqoW0ylhsEJWjRdDmSB2gpbTuM7dxBkY",
-  authDomain: "netflix-onja-rinon.firebaseapp.com",
-  projectId: "netflix-onja-rinon",
-  storageBucket: "netflix-onja-rinon.appspot.com",
-  messagingSenderId: "903610645932",
-  appId: "1:903610645932:web:aeb15290dae7226b410e09" // databaseUrl: "",   
-
+  apiKey: 'AIzaSyATphOSzKr9848kQ24epRhYP3mMoUy8z6A',
+  authDomain: 'netflix-onja-loic.firebaseapp.com',
+  projectId: 'netflix-onja-loic',
+  storageBucket: 'netflix-onja-loic.appspot.com',
+  messagingSenderId: '396259060342',
+  appId: '1:396259060342:web:2ec8f7b64a83ea0bc48d57'
 };
 var firebase = window.firebase.initializeApp(config);
 
@@ -38928,7 +39889,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52739" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53393" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

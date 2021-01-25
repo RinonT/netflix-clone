@@ -3,22 +3,25 @@ import ReactDOM from 'react-dom';
 import { App } from './app';
 import { GlobalStyles } from './globalStyles';
 import { FirebaseContext } from './context/firebase';
+
 const config = {
-    apiKey: "AIzaSyDhqoW0ylhsEJWjRdDmSB2gpbTuM7dxBkY",
-    authDomain: "netflix-onja-rinon.firebaseapp.com",
-    projectId: "netflix-onja-rinon",
-    storageBucket: "netflix-onja-rinon.appspot.com",
-    messagingSenderId: "903610645932",
-    appId: "1:903610645932:web:aeb15290dae7226b410e09"
-    // databaseUrl: "",   
+    apiKey: 'AIzaSyATphOSzKr9848kQ24epRhYP3mMoUy8z6A',
+	authDomain: 'netflix-onja-loic.firebaseapp.com',
+	projectId: 'netflix-onja-loic',
+	storageBucket: 'netflix-onja-loic.appspot.com',
+	messagingSenderId: '396259060342',
+	appId: '1:396259060342:web:2ec8f7b64a83ea0bc48d57',
 }
 
-const firebase = window.firebase.initializeApp(config)
+const firebase = window.firebase.initializeApp(config);
+
 ReactDOM.render(
-    <>
-        <FirebaseContext.Provider value={{ firebase: window.firebase }}>
-            <GlobalStyles />
-            <App />
-        </FirebaseContext.Provider>
-    </>,
-    document.getElementById('root'));
+	<>
+		<FirebaseContext.Provider value={{ firebase: window.firebase }}>
+			<GlobalStyles />
+			<App />
+		</FirebaseContext.Provider>
+	</>,
+	document.getElementById('root')
+);
+ 
