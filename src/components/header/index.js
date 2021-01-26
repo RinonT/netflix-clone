@@ -1,9 +1,13 @@
 import React, { useState } from 'react';
 import { Link as ReachRouterLink } from 'react-router-dom';
-import { Background, Frame, Group, Search, SearchInput, SearchIcon, Container, Link, Logo, Title, Text, ButtonLink, Profile, Dropdown, Picture } from './styles/header';
+import { Background, Frame, Feature, Group, Search, SearchInput, SearchIcon, Container, Link, Logo, Title, Text, ButtonLink, Profile, Dropdown, Picture, FeatureCallOut, PlayButton } from './styles/header';
 
 export default function Header({ bg = true, children, ...resProps }) {
     return bg ? <Background {...resProps}>{children}</Background> : children
+}
+
+Header.Container = function ({ children, ...restProps }) {
+    return <Container {...restProps} >{children}</Container>
 }
 
 Header.PlayButton = function HeaderPlayButton({ children, ...resProps }) {
@@ -56,7 +60,7 @@ Header.Search = function HeaderSearch({ searchTerm, setSearchTerm, ...resProps }
     return (
         <Search {...resProps} >
             <SearchIcon onClick={() => setSearchActive(!searchActive)}>
-                <img scr='images/icons/search.png' alt="Seacrh" />
+                <img src="/images/icons/search.png" alt="Search" />
             </SearchIcon>
             <SearchInput
                 value={searchTerm}
@@ -69,7 +73,7 @@ Header.Search = function HeaderSearch({ searchTerm, setSearchTerm, ...resProps }
 }
 
 
-Header.Picture = function HeaderPicture({src, ...resProps }) {
+Header.Picture = function HeaderPicture({ src, ...resProps }) {
     return <Picture {...resProps} src={`image/user/${src}.png`} />
 }
 

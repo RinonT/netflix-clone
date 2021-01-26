@@ -72,7 +72,11 @@ export const Text = styled.p`
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.45);
 `;
 
-export const Frame = styled.div``;
+export const Frame = styled.div`
+    display: flex;
+    justify-content : space-between;
+    padding : 3rem 1rem;
+`;
 
 export const Feature = styled(Container)`
     padding: 150px 0 500px 0;

@@ -38280,7 +38280,7 @@ function _templateObject9() {
 }
 
 function _templateObject8() {
-  var data = _taggedTemplateLiteral([""]);
+  var data = _taggedTemplateLiteral(["\n    display: flex;\n    justify-content : space-between;\n    padding : 3rem 1rem;\n"]);
 
   _templateObject8 = function _templateObject8() {
     return data;
@@ -38493,82 +38493,89 @@ function Header(_ref) {
   return bg ? /*#__PURE__*/_react.default.createElement(_header.Background, resProps, children) : children;
 }
 
-Header.PlayButton = function HeaderPlayButton(_ref2) {
+Header.Container = function (_ref2) {
   var children = _ref2.children,
-      resProps = _objectWithoutProperties(_ref2, ["children"]);
+      restProps = _objectWithoutProperties(_ref2, ["children"]);
 
-  return /*#__PURE__*/_react.default.createElement(PlayButton, resProps, children);
+  return /*#__PURE__*/_react.default.createElement(_header.Container, restProps, children);
 };
 
-Header.Frame = function HeaderFrame(_ref3) {
+Header.PlayButton = function HeaderPlayButton(_ref3) {
   var children = _ref3.children,
       resProps = _objectWithoutProperties(_ref3, ["children"]);
+
+  return /*#__PURE__*/_react.default.createElement(_header.PlayButton, resProps, children);
+};
+
+Header.Frame = function HeaderFrame(_ref4) {
+  var children = _ref4.children,
+      resProps = _objectWithoutProperties(_ref4, ["children"]);
 
   return /*#__PURE__*/_react.default.createElement(_header.Frame, resProps, children);
 };
 
-Header.Group = function HeaderGroup(_ref4) {
-  var children = _ref4.children,
-      resProps = _objectWithoutProperties(_ref4, ["children"]);
+Header.Group = function HeaderGroup(_ref5) {
+  var children = _ref5.children,
+      resProps = _objectWithoutProperties(_ref5, ["children"]);
 
   return /*#__PURE__*/_react.default.createElement(_header.Group, resProps, children);
 };
 
-Header.Logo = function HeaderLogo(_ref5) {
-  var to = _ref5.to,
-      resProps = _objectWithoutProperties(_ref5, ["to"]);
+Header.Logo = function HeaderLogo(_ref6) {
+  var to = _ref6.to,
+      resProps = _objectWithoutProperties(_ref6, ["to"]);
 
   return /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
     to: to
   }, /*#__PURE__*/_react.default.createElement(_header.Logo, resProps));
 };
 
-Header.ButtonLink = function HeaderButtonLink(_ref6) {
-  var children = _ref6.children,
-      resProps = _objectWithoutProperties(_ref6, ["children"]);
+Header.ButtonLink = function HeaderButtonLink(_ref7) {
+  var children = _ref7.children,
+      resProps = _objectWithoutProperties(_ref7, ["children"]);
 
   return /*#__PURE__*/_react.default.createElement(_header.ButtonLink, resProps, children);
 };
 
-Header.Title = function HeaderTitle(_ref7) {
-  var children = _ref7.children,
-      resProps = _objectWithoutProperties(_ref7, ["children"]);
+Header.Title = function HeaderTitle(_ref8) {
+  var children = _ref8.children,
+      resProps = _objectWithoutProperties(_ref8, ["children"]);
 
   return /*#__PURE__*/_react.default.createElement(_header.Title, resProps, children);
 };
 
-Header.Text = function HeaderText(_ref8) {
-  var children = _ref8.children,
-      resProps = _objectWithoutProperties(_ref8, ["children"]);
+Header.Text = function HeaderText(_ref9) {
+  var children = _ref9.children,
+      resProps = _objectWithoutProperties(_ref9, ["children"]);
 
   return /*#__PURE__*/_react.default.createElement(_header.Text, resProps, children);
 };
 
-Header.Link = function HeaderLink(_ref9) {
-  var children = _ref9.children,
-      resProps = _objectWithoutProperties(_ref9, ["children"]);
+Header.Link = function HeaderLink(_ref10) {
+  var children = _ref10.children,
+      resProps = _objectWithoutProperties(_ref10, ["children"]);
 
   return /*#__PURE__*/_react.default.createElement(_header.Link, resProps, children);
 };
 
-Header.Feature = function HeaderFeature(_ref10) {
-  var children = _ref10.children,
-      resProps = _objectWithoutProperties(_ref10, ["children"]);
-
-  return /*#__PURE__*/_react.default.createElement(Feature, resProps, children);
-};
-
-Header.FeatureCallOut = function HeaderFeatureCallOut(_ref11) {
+Header.Feature = function HeaderFeature(_ref11) {
   var children = _ref11.children,
       resProps = _objectWithoutProperties(_ref11, ["children"]);
 
-  return /*#__PURE__*/_react.default.createElement(FeatureCallOut, resProps, children);
+  return /*#__PURE__*/_react.default.createElement(_header.Feature, resProps, children);
 };
 
-Header.Search = function HeaderSearch(_ref12) {
-  var searchTerm = _ref12.searchTerm,
-      setSearchTerm = _ref12.setSearchTerm,
-      resProps = _objectWithoutProperties(_ref12, ["searchTerm", "setSearchTerm"]);
+Header.FeatureCallOut = function HeaderFeatureCallOut(_ref12) {
+  var children = _ref12.children,
+      resProps = _objectWithoutProperties(_ref12, ["children"]);
+
+  return /*#__PURE__*/_react.default.createElement(_header.FeatureCallOut, resProps, children);
+};
+
+Header.Search = function HeaderSearch(_ref13) {
+  var searchTerm = _ref13.searchTerm,
+      setSearchTerm = _ref13.setSearchTerm,
+      resProps = _objectWithoutProperties(_ref13, ["searchTerm", "setSearchTerm"]);
 
   var _useState = (0, _react.useState)(false),
       _useState2 = _slicedToArray(_useState, 2),
@@ -38580,12 +38587,12 @@ Header.Search = function HeaderSearch(_ref12) {
       return setSearchActive(!searchActive);
     }
   }, /*#__PURE__*/_react.default.createElement("img", {
-    scr: "images/icons/search.png",
-    alt: "Seacrh"
+    src: "/images/icons/search.png",
+    alt: "Search"
   })), /*#__PURE__*/_react.default.createElement(_header.SearchInput, {
     value: searchTerm,
-    onChange: function onChange(_ref13) {
-      var target = _ref13.target;
+    onChange: function onChange(_ref14) {
+      var target = _ref14.target;
       return setSearchTerm(target.value);
     },
     placeholder: "Search files and series",
@@ -38593,25 +38600,25 @@ Header.Search = function HeaderSearch(_ref12) {
   }));
 };
 
-Header.Picture = function HeaderPicture(_ref14) {
-  var src = _ref14.src,
-      resProps = _objectWithoutProperties(_ref14, ["src"]);
+Header.Picture = function HeaderPicture(_ref15) {
+  var src = _ref15.src,
+      resProps = _objectWithoutProperties(_ref15, ["src"]);
 
   return /*#__PURE__*/_react.default.createElement(_header.Picture, _extends({}, resProps, {
     src: "image/user/".concat(src, ".png")
   }));
 };
 
-Header.Profile = function HeaderProfile(_ref15) {
-  var children = _ref15.children,
-      resProps = _objectWithoutProperties(_ref15, ["children"]);
+Header.Profile = function HeaderProfile(_ref16) {
+  var children = _ref16.children,
+      resProps = _objectWithoutProperties(_ref16, ["children"]);
 
   return /*#__PURE__*/_react.default.createElement(_header.Profile, resProps, children);
 };
 
-Header.Dropdown = function HeaderDropdown(_ref16) {
-  var children = _ref16.children,
-      resProps = _objectWithoutProperties(_ref16, ["children"]);
+Header.Dropdown = function HeaderDropdown(_ref17) {
+  var children = _ref17.children,
+      resProps = _objectWithoutProperties(_ref17, ["children"]);
 
   return /*#__PURE__*/_react.default.createElement(_header.Dropdown, resProps, children);
 };
@@ -39688,31 +39695,34 @@ function BrowseContainer() {
     photoUrl: "1"
   };
   return profile.displayName ? /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(_components.Header, {
-    src: "joke1",
+    src: "joker1",
     dontShowOnSmallViewPort: true
   }, /*#__PURE__*/_react.default.createElement(_components.Header.Frame, null, /*#__PURE__*/_react.default.createElement(_components.Header.Group, null, /*#__PURE__*/_react.default.createElement(_components.Header.Logo, {
     to: ROUTES.HOME,
-    src: "/images/misc/logo.svg",
+    src: "/images//misc/logo.svg",
     alt: "Netflix"
   }), /*#__PURE__*/_react.default.createElement(_components.Header.Link, {
     active: category === 'series' ? 'true' : 'false',
     onClick: function onClick() {
-      return setCategory('series');
+      return setCategory("series");
     }
   }, "Series"), /*#__PURE__*/_react.default.createElement(_components.Header.Link, {
     active: category === 'films' ? 'true' : 'false',
     onClick: function onClick() {
-      return setCategory('films');
+      return setCategory("films");
     }
   }, "Films")), /*#__PURE__*/_react.default.createElement(_components.Header.Group, null, /*#__PURE__*/_react.default.createElement(_components.Header.Search, {
-    searchTerm: searchTerm
-  }), /*#__PURE__*/_react.default.createElement(_components.Header.Profile, null, /*#__PURE__*/_react.default.createElement(_components.Header.Picture, {
+    searchTerm: searchTerm,
+    setSearchTerm: setSearchTerm
+  }, /*#__PURE__*/_react.default.createElement(_components.Header.Profile, null, /*#__PURE__*/_react.default.createElement(_components.Header.Picture, {
+    src: user.photoURL
+  }), /*#__PURE__*/_react.default.createElement(_components.Header.Dropdown, null, /*#__PURE__*/_react.default.createElement(_components.Header.Group, null, /*#__PURE__*/_react.default.createElement(_components.Header.Picture, {
     src: user.photoUrl
-  }), /*#__PURE__*/_react.default.createElement(_components.Header.Dropdown, null, /*#__PURE__*/_react.default.createElement(_components.Header.Group, null, /*#__PURE__*/_react.default.createElement(_components.Header.Picture, null, /*#__PURE__*/_react.default.createElement(_components.Header.TextLink, null, user.displayName))), /*#__PURE__*/_react.default.createElement(_components.Header.Group, null, /*#__PURE__*/_react.default.createElement(_components.Header.TextLink, {
+  }), /*#__PURE__*/_react.default.createElement(_components.Header.Link, {
     onClick: function onClick() {
       return _firebase.FirebaseContext.auth().signOut();
     }
-  }, "Sign out")))))), /*#__PURE__*/_react.default.createElement(_components.Header.Feature, null, /*#__PURE__*/_react.default.createElement(_components.Header.FeatureCallOut, null, "Watch Joker now"), /*#__PURE__*/_react.default.createElement(_components.Header.Text, null, "Forever alone in a crowd, failed comedian Arthur Fleck seeks connection as he walks the streets of Gotham City. Arthur wears two masks -- the one he paints for his day job as a clown, and the guise he projects in a futile attempt to feel like he's part of the world around him"), /*#__PURE__*/_react.default.createElement(_components.Header.PlayButton, null, "Play"))), /*#__PURE__*/_react.default.createElement(_footer.default, null)) : /*#__PURE__*/_react.default.createElement(_profiles.SelectProfilesContainer, {
+  }, user.displayName)), /*#__PURE__*/_react.default.createElement(_components.Header.Group, null, /*#__PURE__*/_react.default.createElement(_components.Header.Link, null, "Sign out"))))))), /*#__PURE__*/_react.default.createElement(_components.Header.Feature, null, /*#__PURE__*/_react.default.createElement(_components.Header.FeatureCallOut, null, "Watch Joker Now"), /*#__PURE__*/_react.default.createElement(_components.Header.Text, null, "Forever alone in a crowd, failed comedian Arthur Fleck seeks connection as he walks the streets of Gotham job as a clown, and the guise he projects in a futile attempt to feel like he's part of the world around him."), /*#__PURE__*/_react.default.createElement(_components.Header.PlayButton, null, "Play"))), /*#__PURE__*/_react.default.createElement(_footer.default, null)) : /*#__PURE__*/_react.default.createElement(_profiles.SelectProfilesContainer, {
     user: user,
     setProfile: setProfile
   });
@@ -39889,7 +39899,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53393" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63413" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
