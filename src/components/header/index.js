@@ -72,14 +72,14 @@ Header.Search = function HeaderSearch({ searchTerm, setSearchTerm, ...resProps }
     )
 }
 
-
-Header.Picture = function HeaderPicture({ src, ...resProps }) {
-    return <Picture {...resProps} src={`image/user/${src}.png`} />
-}
+ 
+Header.Picture = function HeaderPicture({ src, ...restProps }) {
+	return <Picture {...restProps} src={`images/users/${src}.png`} />;
+};
 
 
 Header.Profile = function HeaderProfile({ children, ...resProps }) {
-    return <Profile {...resProps} >{children}</Profile>
+    return <Profile {...resProps}>{children}</Profile>
 }
 
 

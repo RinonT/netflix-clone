@@ -3,18 +3,22 @@ import ReactDOM from 'react-dom';
 import { App } from './app';
 import { GlobalStyles } from './globalStyles';
 import { FirebaseContext } from './context/firebase';
+// import { seedDatabase } from './seed';
 
 const config = {
-    apiKey: 'AIzaSyATphOSzKr9848kQ24epRhYP3mMoUy8z6A',
-	authDomain: 'netflix-onja-loic.firebaseapp.com',
-	projectId: 'netflix-onja-loic',
-	storageBucket: 'netflix-onja-loic.appspot.com',
-	messagingSenderId: '396259060342',
-	appId: '1:396259060342:web:2ec8f7b64a83ea0bc48d57',
-}
-
+	apiKey: "AIzaSyDBF9V8ZzRaL9lwqBWeHdCkl20Zr1tPlLs",
+    authDomain: "onja-netflix-clone.firebaseapp.com",
+    projectId: "onja-netflix-clone",
+    storageBucket: "onja-netflix-clone.appspot.com",
+    messagingSenderId: "11844310372",
+    appId: "1:11844310372:web:203c5a98de5f2110a11671",
+    measurementId: "G-M5QTM50ZEZ"
+  };
+  // Initialize Firebase
+  
 const firebase = window.firebase.initializeApp(config);
 
+// seedDatabase(firebase);
 ReactDOM.render(
 	<>
 		<FirebaseContext.Provider value={{ firebase: window.firebase }}>

@@ -38181,7 +38181,7 @@ OptForm.Text = function OptFormText(_ref5) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.Profile = exports.Dropdown = exports.Picture = exports.SearchInput = exports.SearchIcon = exports.Search = exports.PlayButton = exports.FeatureCallOut = exports.Feature = exports.Frame = exports.Text = exports.Group = exports.Logo = exports.ButtonLink = exports.Link = exports.Container = exports.Background = void 0;
+exports.Profile = exports.Dropdown = exports.Picture = exports.SearchInput = exports.SearchIcon = exports.Search = exports.Frame = exports.PlayButton = exports.FeatureCallOut = exports.Feature = exports.Text = exports.Group = exports.Logo = exports.ButtonLink = exports.Link = exports.Container = exports.Background = void 0;
 
 var _styledComponents = _interopRequireDefault(require("styled-components"));
 
@@ -38190,7 +38190,7 @@ var _reactRouterDom = require("react-router-dom");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _templateObject17() {
-  var data = _taggedTemplateLiteral(["\n    display: flex;\n    align-items: center;\n    margin-left: 20px;\n    position: relative;\n    button {\n        cursor: pointer;\n    }\n    &:hover > ", " {\n        display: flex;\n        flex-direction: column;\n    }\n"]);
+  var data = _taggedTemplateLiteral(["\n\tdisplay: flex;\n\talign-items: center;\n\tmargin-left: 20px;\n\tposition: relative;\n\tbutton {\n\t\tcursor: pointer;\n\t}\n\t&:hover > ", " {\n\t\tdisplay: flex;\n\t\tflex-direction: column;\n\t}\n"]);
 
   _templateObject17 = function _templateObject17() {
     return data;
@@ -38200,7 +38200,7 @@ function _templateObject17() {
 }
 
 function _templateObject16() {
-  var data = _taggedTemplateLiteral(["\n    display: none;\n    position: absolute;\n    background-color: black;\n    padding: 10px;\n    width: 100px;\n    top: 32px;\n    right: 10px;\n    ", ":last-of-type ", " {\n        cursor: pointer;\n    }\n    ", " {\n        margin-bottom: 10px;\n        &:last-of-type {\n            margin-bottom: 0;\n        }\n        ", ", ", " {\n            cursor: default;\n        }\n    }\n    button {\n        margin-right: 10px;\n    }\n    p {\n        font-size: 12px;\n        margin-bottom: 0;\n        margin-top: 0;\n    }\n"]);
+  var data = _taggedTemplateLiteral(["\n\tdisplay: none;\n\tposition: absolute;\n\tbackground-color: black;\n\tpadding: 10px;\n\twidth: 100px;\n\ttop: 32px;\n\tright: 10px;\n\t", ":last-of-type ", " {\n\t\tcursor: pointer;\n\t}\n\t", " {\n\t\tmargin-bottom: 10px;\n\t\t&:last-of-type {\n\t\t\tmargin-bottom: 0;\n\t\t}\n\t\t", ", ", " {\n\t\t\tcursor: default;\n\t\t}\n\t}\n\tbutton {\n\t\tmargin-right: 10px;\n\t}\n\tp {\n\t\tfont-size: 12px;\n\t\tmargin-bottom: 0;\n\t\tmargin-top: 0;\n\t}\n"]);
 
   _templateObject16 = function _templateObject16() {
     return data;
@@ -38210,7 +38210,7 @@ function _templateObject16() {
 }
 
 function _templateObject15() {
-  var data = _taggedTemplateLiteral(["\n    background: url(", ");\n    background-size: contain;\n    border: 0;\n    width: 32px;\n    height: 32px;\n    cursor: pointer;\n"]);
+  var data = _taggedTemplateLiteral(["\n\tbackground: url(", ");\n\tbackground-size: contain;\n\tborder: 0;\n\twidth: 32px;\n\theight: 32px;\n\tcursor: pointer;\n"]);
 
   _templateObject15 = function _templateObject15() {
     return data;
@@ -38220,7 +38220,7 @@ function _templateObject15() {
 }
 
 function _templateObject14() {
-  var data = _taggedTemplateLiteral(["\n    background-color: #44444459;\n    color: white;\n    border: 1px solid white;\n    transition: width 0.5s;\n    height: 30px;\n    font-size: 14px;\n    margin-left: ", ";\n    padding: ", ";\n    opacity: ", ";\n    width: ", ";\n"]);
+  var data = _taggedTemplateLiteral(["\n\tbackground-color: #44444459;\n\tcolor: white;\n\tborder: 1px solid white;\n\ttransition: width 0.5s;\n\theight: 30px;\n\tfont-size: 14px;\n\tmargin-left: ", ";\n\tpadding: ", ";\n\topacity: ", ";\n\twidth: ", ";\n"]);
 
   _templateObject14 = function _templateObject14() {
     return data;
@@ -38230,7 +38230,7 @@ function _templateObject14() {
 }
 
 function _templateObject13() {
-  var data = _taggedTemplateLiteral(["\n    cursor: pointer;\n    background-color: transparent;\n    border: 0;\n    img {\n        filter: brightness(0) invert(1);\n        width: 16px;\n    }\n"]);
+  var data = _taggedTemplateLiteral(["\n\tcursor: pointer;\n\tbackground-color: transparent;\n\tborder: 0;\n\timg {\n\t\tfilter: brightness(0) invert(1);\n\t\twidth: 16px;\n\t}\n"]);
 
   _templateObject13 = function _templateObject13() {
     return data;
@@ -38240,7 +38240,7 @@ function _templateObject13() {
 }
 
 function _templateObject12() {
-  var data = _taggedTemplateLiteral(["\n    display: flex;\n    align-items: center;\n    @media (max-width: 700px) {\n        display: none;\n    }\n"]);
+  var data = _taggedTemplateLiteral(["\n\tdisplay: flex;\n\talign-items: center;\n\t@media (max-width: 700px) {\n\t\tdisplay: none;\n\t}\n"]);
 
   _templateObject12 = function _templateObject12() {
     return data;
@@ -38250,7 +38250,7 @@ function _templateObject12() {
 }
 
 function _templateObject11() {
-  var data = _taggedTemplateLiteral(["\n    box-shadow: 0 0.6vw 1vw -0.4vw rgba(0, 0, 0, 0.35);\n    background-color: #e6e6e6;\n    color: #000;\n    border-width: 0;\n    padding: 10px 20px;\n    border-radius: 5px;\n    max-width: 130px;\n    font-weight: bold;\n    font-size: 20px;\n    margin-top: 10px;\n    cursor: pointer;\n    transition: background-color 0.5s ease;\n    &:hover {\n        background: #ff1e1e;\n        color: white;\n    }\n"]);
+  var data = _taggedTemplateLiteral(["\n    display: flex;\n    justify-content : space-between;\n    padding : 3rem 1rem;\n"]);
 
   _templateObject11 = function _templateObject11() {
     return data;
@@ -38260,7 +38260,7 @@ function _templateObject11() {
 }
 
 function _templateObject10() {
-  var data = _taggedTemplateLiteral(["\n    color: white;\n    font-size: 50px;\n    line-height: normal;\n    font-weight: bold;\n    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.45);\n    margin: 0;\n"]);
+  var data = _taggedTemplateLiteral(["\n    box-shadow: 0 0.6vw 1vw -0.4vw rgba(0, 0, 0, 0.35);\n    background-color: #e6e6e6;\n    color: #000;\n    border-width: 0;\n    padding: 10px 20px;\n    border-radius: 5px;\n    max-width: 130px;\n    font-weight: bold;\n    font-size: 20px;\n    margin-top: 10px;\n    cursor: pointer;\n    transition: background-color 0.5s ease;\n    \n    &:hover {\n        background: #ff1e1e;\n        color: white;\n    }\n"]);
 
   _templateObject10 = function _templateObject10() {
     return data;
@@ -38270,7 +38270,7 @@ function _templateObject10() {
 }
 
 function _templateObject9() {
-  var data = _taggedTemplateLiteral(["\n    padding: 150px 0 500px 0;\n    flex-direction: column;\n    align-items: normal;\n    width: 50%;\n    @media (max-width: 1100px) {\n        display: none;\n    }\n"]);
+  var data = _taggedTemplateLiteral(["\n\tcolor: white;\n\tfont-size: 50px;\n\tline-height: normal;\n\tfont-weight: bold;\n\ttext-shadow: 2px 2px 4px rgba(0, 0, 0, 0.45);\n\tmargin: 0;\n"]);
 
   _templateObject9 = function _templateObject9() {
     return data;
@@ -38280,7 +38280,7 @@ function _templateObject9() {
 }
 
 function _templateObject8() {
-  var data = _taggedTemplateLiteral(["\n    display: flex;\n    justify-content : space-between;\n    padding : 3rem 1rem;\n"]);
+  var data = _taggedTemplateLiteral(["\n\tpadding: 150px 0 500px 0;\n\tflex-direction: column;\n\talign-items: normal;\n\twidth: 50%;\n\t@media (max-width: 1100px) {\n\t\tdisplay: none;\n\t}\n"]);
 
   _templateObject8 = function _templateObject8() {
     return data;
@@ -38290,7 +38290,7 @@ function _templateObject8() {
 }
 
 function _templateObject7() {
-  var data = _taggedTemplateLiteral(["\n    color: white;\n    font-size: 22px;\n    line-height: normal;\n    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.45);\n"]);
+  var data = _taggedTemplateLiteral(["\n\tcolor: white;\n\tfont-size: 22px;\n\tline-height: normal;\n\ttext-shadow: 2px 2px 4px rgba(0, 0, 0, 0.45);\n"]);
 
   _templateObject7 = function _templateObject7() {
     return data;
@@ -38300,7 +38300,7 @@ function _templateObject7() {
 }
 
 function _templateObject6() {
-  var data = _taggedTemplateLiteral(["\n    display: flex;\n    align-items: center;\n"]);
+  var data = _taggedTemplateLiteral(["\n\tdisplay: flex;\n\talign-items: center;\n"]);
 
   _templateObject6 = function _templateObject6() {
     return data;
@@ -38310,7 +38310,7 @@ function _templateObject6() {
 }
 
 function _templateObject5() {
-  var data = _taggedTemplateLiteral(["\n    height: 32px;\n    width: 108px;\n    margin-right: 40px;\n    @media (min-width: 1449px) {\n        height: 45px;\n        width: 167px;\n    }\n"]);
+  var data = _taggedTemplateLiteral(["\n\theight: 32px;\n\twidth: 108px;\n\tmargin-right: 40px;\n\t@media (min-width: 1449px) {\n\t\theight: 45px;\n\t\twidth: 167px;\n\t}\n"]);
 
   _templateObject5 = function _templateObject5() {
     return data;
@@ -38320,7 +38320,7 @@ function _templateObject5() {
 }
 
 function _templateObject4() {
-  var data = _taggedTemplateLiteral(["\n    display: block;\n    background-color: #e50914;\n    width: 84px;\n    height: fit-content;\n    color: white;\n    border: 0;\n    font-size: 15px;\n    border-radius: 3px;\n    padding: 8px 17px;\n    cursor: pointer;\n    text-decoration: none;\n    box-sizing: border-box;\n    &:hover {\n        background: #f40612;\n    }\n"]);
+  var data = _taggedTemplateLiteral(["\n\tdisplay: block;\n\tbackground-color: #e50914;\n\twidth: 84px;\n\theight: fit-content;\n\tcolor: white;\n\tborder: 0;\n\tfont-size: 15px;\n\tborder-radius: 3px;\n\tpadding: 8px 17px;\n\tcursor: pointer;\n\ttext-decoration: none;\n\tbox-sizing: border-box;\n\t&:hover {\n\t\tbackground: #f40612;\n\t}\n"]);
 
   _templateObject4 = function _templateObject4() {
     return data;
@@ -38330,7 +38330,7 @@ function _templateObject4() {
 }
 
 function _templateObject3() {
-  var data = _taggedTemplateLiteral(["\n    color: #fff;\n    text-decoration: none;\n    margin-right: 30px;\n    font-weight: ", ";\n    cursor: pointer;\n    &:hover {\n        font-weight: bold;\n    }\n    &:last-of-type {\n        margin-right: 0;\n    }\n"]);
+  var data = _taggedTemplateLiteral(["\n\tcolor: #fff;\n\ttext-decoration: none;\n\tmargin-right: 30px;\n\tfont-weight: ", ";\n\tcursor: pointer;\n\t&:hover {\n\t\tfont-weight: bold;\n\t}\n\t&:last-of-type {\n\t\tmargin-right: 0;\n\t}\n"]);
 
   _templateObject3 = function _templateObject3() {
     return data;
@@ -38340,7 +38340,7 @@ function _templateObject3() {
 }
 
 function _templateObject2() {
-  var data = _taggedTemplateLiteral(["\n    display: flex;\n    margin: 0 56px;\n    height: 64px;\n    padding: 18px 0;\n    justify-content: space-between;\n    align-items: center;\n    a {\n        display: flex;\n    }\n    @media (max-width: 1000px) {\n        margin: 0 30px;\n    }\n"]);
+  var data = _taggedTemplateLiteral(["\n\tdisplay: flex;\n\tmargin: 0 56px;\n\theight: 64px;\n\tpadding: 18px 0;\n\tjustify-content: space-between;\n\talign-items: center;\n\ta {\n\t\tdisplay: flex;\n\t}\n\t@media (max-width: 1000px) {\n\t\tmargin: 0 30px;\n\t}\n"]);
 
   _templateObject2 = function _templateObject2() {
     return data;
@@ -38350,7 +38350,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n    display: flex;\n    flex-direction: column;\n    background: url(", ") top left / cover no-repeat;\n    @media (max-width: 1100px) {\n        ", "\n    }\n"]);
+  var data = _taggedTemplateLiteral(["\n\tdisplay: flex;\n\tflex-direction: column;\n\tbackground: url(", ") top left / cover no-repeat;\n\t@media (max-width: 1100px) {\n\t\t", "\n\t}\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -38395,20 +38395,20 @@ exports.Group = Group;
 var Text = _styledComponents.default.p(_templateObject7());
 
 exports.Text = Text;
-
-var Frame = _styledComponents.default.div(_templateObject8());
-
-exports.Frame = Frame;
-var Feature = (0, _styledComponents.default)(Container)(_templateObject9());
+var Feature = (0, _styledComponents.default)(Container)(_templateObject8());
 exports.Feature = Feature;
 
-var FeatureCallOut = _styledComponents.default.h2(_templateObject10());
+var FeatureCallOut = _styledComponents.default.h2(_templateObject9());
 
 exports.FeatureCallOut = FeatureCallOut;
 
-var PlayButton = _styledComponents.default.button(_templateObject11());
+var PlayButton = _styledComponents.default.button(_templateObject10());
 
 exports.PlayButton = PlayButton;
+
+var Frame = _styledComponents.default.div(_templateObject11());
+
+exports.Frame = Frame;
 
 var Search = _styledComponents.default.div(_templateObject12());
 
@@ -38602,10 +38602,10 @@ Header.Search = function HeaderSearch(_ref13) {
 
 Header.Picture = function HeaderPicture(_ref15) {
   var src = _ref15.src,
-      resProps = _objectWithoutProperties(_ref15, ["src"]);
+      restProps = _objectWithoutProperties(_ref15, ["src"]);
 
-  return /*#__PURE__*/_react.default.createElement(_header.Picture, _extends({}, resProps, {
-    src: "image/user/".concat(src, ".png")
+  return /*#__PURE__*/_react.default.createElement(_header.Picture, _extends({}, restProps, {
+    src: "images/users/".concat(src, ".png")
   }));
 };
 
@@ -39102,7 +39102,108 @@ Profiles.Name = function ProfilesName(_ref7) {
 
   return /*#__PURE__*/_react.default.createElement(_profiles.Name, resProps, children);
 };
-},{"react":"node_modules/react/index.js","./styles/profiles":"src/components/profiles/styles/profiles.js"}],"src/components/index.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","./styles/profiles":"src/components/profiles/styles/profiles.js"}],"src/components/loading/styles/loading.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.Picture = exports.Spinner = exports.ReleaseBody = exports.LockBody = void 0;
+
+var _styledComponents = _interopRequireWildcard(require("styled-components"));
+
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function _templateObject4() {
+  var data = _taggedTemplateLiteral(["\n    width: 50px;\n    height: 50px;\n    position: absolute;\n    top: 50%;\n    left: 50%;\n    margin-top: -100px;\n    margin-left: -22px;\n"]);
+
+  _templateObject4 = function _templateObject4() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject3() {
+  var data = _taggedTemplateLiteral(["\n    position: fixed;\n    width: 100%;\n    height: 100%;\n    background-color: black;\n    z-index: 999;\n    :after {\n        content: '';\n        position: absolute;\n        top: 50%;\n        left: 50%;\n        background-image: url(/images/misc/spinner.png);\n        background-size: contain;\n        background-repeat: no-repeat;\n        margin-top: -150px;\n        margin-left: -75px;\n        width: 150px;\n        height: 150px;\n        animation-name: spin;\n        animation-duration: 1000ms;\n        animation-iteration-count: infinite;\n        animation-timing-function: linear;\n    }\n    @-ms-keyframes spin {\n        from {\n            -ms-transform: rotate(0deg);\n        }\n        to {\n            -ms-transform: rotate(360deg);\n        }\n    }\n    @-moz-keyframes spin {\n        from {\n            -moz-transform: rotate(0deg);\n        }\n        to {\n            -moz-transform: rotate(360deg);\n        }\n    }\n    @-webkit-keyframes spin {\n        from {\n            -webkit-transform: rotate(0deg);\n        }\n        to {\n            -webkit-transform: rotate(360deg);\n        }\n    }\n    @keyframes spin {\n        from {\n            transform: rotate(0deg);\n        }\n        to {\n            transform: rotate(360deg);\n        }\n    }\n"]);
+
+  _templateObject3 = function _templateObject3() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject2() {
+  var data = _taggedTemplateLiteral(["\n    body {\n        overflow: visible;\n    }\n"]);
+
+  _templateObject2 = function _templateObject2() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject() {
+  var data = _taggedTemplateLiteral(["\n    body {\n        overflow: hidden;\n    }\n"]);
+
+  _templateObject = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+var LockBody = (0, _styledComponents.createGlobalStyle)(_templateObject());
+exports.LockBody = LockBody;
+var ReleaseBody = (0, _styledComponents.createGlobalStyle)(_templateObject2());
+exports.ReleaseBody = ReleaseBody;
+
+var Spinner = _styledComponents.default.div(_templateObject3());
+
+exports.Spinner = Spinner;
+
+var Picture = _styledComponents.default.img(_templateObject4());
+
+exports.Picture = Picture;
+},{"styled-components":"node_modules/styled-components/dist/styled-components.browser.esm.js"}],"src/components/loading/index.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = Loading;
+
+var _react = _interopRequireDefault(require("react"));
+
+var _loading = require("./styles/loading");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+
+function Loading(_ref) {
+  var src = _ref.src,
+      resProps = _objectWithoutProperties(_ref, ["src"]);
+
+  return /*#__PURE__*/_react.default.createElement(_loading.Spinner, resProps, /*#__PURE__*/_react.default.createElement(_loading.LockBody, null), /*#__PURE__*/_react.default.createElement(_loading.Picture, {
+    src: "/images/users/".concat(src, ".png")
+  }));
+}
+
+Loading.ReleaseBody = function LoadingReleaseBody(_ref2) {
+  var children = _ref2.children,
+      resProps = _objectWithoutProperties(_ref2, ["children"]);
+
+  return /*#__PURE__*/_react.default.createElement(_loading.ReleaseBody, resProps, children);
+};
+},{"react":"node_modules/react/index.js","./styles/loading":"src/components/loading/styles/loading.js"}],"src/components/index.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -39156,6 +39257,12 @@ Object.defineProperty(exports, "Profiles", {
     return _profiles.default;
   }
 });
+Object.defineProperty(exports, "Loading", {
+  enumerable: true,
+  get: function () {
+    return _loading.default;
+  }
+});
 
 var _jumbotron = _interopRequireDefault(require("./jumbotron"));
 
@@ -39173,8 +39280,10 @@ var _form = _interopRequireDefault(require("./form"));
 
 var _profiles = _interopRequireDefault(require("./profiles"));
 
+var _loading = _interopRequireDefault(require("./loading"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-},{"./jumbotron":"src/components/jumbotron/index.js","./footer":"src/components/footer/index.js","./accordion":"src/components/accordion/index.js","./opt-form":"src/components/opt-form/index.js","./header":"src/components/header/index.js","./feature":"src/components/feature/index.js","./form":"src/components/form/index.js","./profiles":"src/components/profiles/index.js"}],"src/containers/jumbotron.js":[function(require,module,exports) {
+},{"./jumbotron":"src/components/jumbotron/index.js","./footer":"src/components/footer/index.js","./accordion":"src/components/accordion/index.js","./opt-form":"src/components/opt-form/index.js","./header":"src/components/header/index.js","./feature":"src/components/feature/index.js","./form":"src/components/form/index.js","./profiles":"src/components/profiles/index.js","./loading":"src/components/loading/index.js"}],"src/containers/jumbotron.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -39694,40 +39803,198 @@ function BrowseContainer() {
     displayName: "Laza",
     photoUrl: "1"
   };
-  return profile.displayName ? /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(_components.Header, {
+  (0, _react.useEffect)(function () {
+    setTimeout(function () {
+      setLoading(false);
+    }, 4000);
+  }, [user]);
+  return profile.displayName ? /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, loading ? /*#__PURE__*/_react.default.createElement(_components.Loading, {
+    src: user.photoUrl
+  }) : /*#__PURE__*/_react.default.createElement(_components.Loading.ReleaseBody, null), /*#__PURE__*/_react.default.createElement(_components.Header, {
     src: "joker1",
     dontShowOnSmallViewPort: true
   }, /*#__PURE__*/_react.default.createElement(_components.Header.Frame, null, /*#__PURE__*/_react.default.createElement(_components.Header.Group, null, /*#__PURE__*/_react.default.createElement(_components.Header.Logo, {
     to: ROUTES.HOME,
-    src: "/images//misc/logo.svg",
+    src: "/images/misc/logo.svg",
     alt: "Netflix"
   }), /*#__PURE__*/_react.default.createElement(_components.Header.Link, {
-    active: category === 'series' ? 'true' : 'false',
     onClick: function onClick() {
-      return setCategory("series");
-    }
+      return setCategory('series');
+    },
+    active: category === 'series' ? 'true' : 'false'
   }, "Series"), /*#__PURE__*/_react.default.createElement(_components.Header.Link, {
-    active: category === 'films' ? 'true' : 'false',
     onClick: function onClick() {
-      return setCategory("films");
-    }
+      return setCategory('films');
+    },
+    active: category === 'films' ? 'true' : 'false'
   }, "Films")), /*#__PURE__*/_react.default.createElement(_components.Header.Group, null, /*#__PURE__*/_react.default.createElement(_components.Header.Search, {
     searchTerm: searchTerm,
     setSearchTerm: setSearchTerm
-  }, /*#__PURE__*/_react.default.createElement(_components.Header.Profile, null, /*#__PURE__*/_react.default.createElement(_components.Header.Picture, {
-    src: user.photoURL
+  }), /*#__PURE__*/_react.default.createElement(_components.Header.Profile, null, /*#__PURE__*/_react.default.createElement(_components.Header.Picture, {
+    src: user.photoUrl
   }), /*#__PURE__*/_react.default.createElement(_components.Header.Dropdown, null, /*#__PURE__*/_react.default.createElement(_components.Header.Group, null, /*#__PURE__*/_react.default.createElement(_components.Header.Picture, {
     src: user.photoUrl
-  }), /*#__PURE__*/_react.default.createElement(_components.Header.Link, {
+  }), /*#__PURE__*/_react.default.createElement(_components.Header.Link, null, user.displayName)), /*#__PURE__*/_react.default.createElement(_components.Header.Group, null, /*#__PURE__*/_react.default.createElement(_components.Header.Link, {
     onClick: function onClick() {
-      return _firebase.FirebaseContext.auth().signOut();
+      return firebase.auth().signOut();
     }
-  }, user.displayName)), /*#__PURE__*/_react.default.createElement(_components.Header.Group, null, /*#__PURE__*/_react.default.createElement(_components.Header.Link, null, "Sign out"))))))), /*#__PURE__*/_react.default.createElement(_components.Header.Feature, null, /*#__PURE__*/_react.default.createElement(_components.Header.FeatureCallOut, null, "Watch Joker Now"), /*#__PURE__*/_react.default.createElement(_components.Header.Text, null, "Forever alone in a crowd, failed comedian Arthur Fleck seeks connection as he walks the streets of Gotham job as a clown, and the guise he projects in a futile attempt to feel like he's part of the world around him."), /*#__PURE__*/_react.default.createElement(_components.Header.PlayButton, null, "Play"))), /*#__PURE__*/_react.default.createElement(_footer.default, null)) : /*#__PURE__*/_react.default.createElement(_profiles.SelectProfilesContainer, {
+  }, "Sign out")))))), /*#__PURE__*/_react.default.createElement(_components.Header.Feature, null, /*#__PURE__*/_react.default.createElement(_components.Header.FeatureCallOut, null, "Watch Joker Now"), /*#__PURE__*/_react.default.createElement(_components.Header.Text, null, "Forever alone in a crowd, failed comedian Arthur Fleck seeks connection as he walks the streets of Gotham City. Arthur wears two masks -- the one he paints for his day job as a clown, and the guise he projects in a futile attempt to feel like he's part of the world around him."), /*#__PURE__*/_react.default.createElement(_components.Header.PlayButton, null, "Play"))), /*#__PURE__*/_react.default.createElement(_footer.default, null)) : /*#__PURE__*/_react.default.createElement(_profiles.SelectProfilesContainer, {
     user: user,
     setProfile: setProfile
   });
 }
-},{"react":"node_modules/react/index.js","../components":"src/components/index.js","../constants/routes":"src/constants/routes.js","../context/firebase":"src/context/firebase.js","./profiles":"src/containers/profiles.js","./footer":"src/containers/footer.js"}],"src/pages/browse.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","../components":"src/components/index.js","../constants/routes":"src/constants/routes.js","../context/firebase":"src/context/firebase.js","./profiles":"src/containers/profiles.js","./footer":"src/containers/footer.js"}],"src/hooks/use-content.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = useContent;
+
+var _react = require("react");
+
+var _firebase = require("../context/firebase");
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+function useContent(target) {
+  var _useState = (0, _react.useState)([]),
+      _useState2 = _slicedToArray(_useState, 2),
+      content = _useState2[0],
+      setContent = _useState2[1];
+
+  var _useContext = (0, _react.useContext)(_firebase.FirebaseContext),
+      firebase = _useContext.firebase;
+
+  (0, _react.useEffect)(function () {
+    firebase.firestore().collection(target).get().then(function (snapshot) {
+      var allContent = snapshot.docs.map(function (contentObj) {
+        return _objectSpread(_objectSpread({}, contentObj.data()), {}, {
+          docId: contentObj.id
+        });
+      });
+      setContent(allContent);
+    }).catch(function (error) {
+      return console.log(error.mesage);
+    });
+  });
+  return _defineProperty({}, target, content);
+}
+},{"react":"node_modules/react/index.js","../context/firebase":"src/context/firebase.js"}],"src/hooks/index.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+Object.defineProperty(exports, "useContent", {
+  enumerable: true,
+  get: function () {
+    return _useContent.default;
+  }
+});
+
+var _useContent = _interopRequireDefault(require("./use-content"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+},{"./use-content":"src/hooks/use-content.js"}],"src/utils/selection-map.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = selectionMap;
+
+function selectionMap(_ref) {
+  var series = _ref.series,
+      films = _ref.films;
+  return {
+    series: [{
+      title: 'Documentaries',
+      data: series.filter(function (item) {
+        return item.genre === 'documentaries';
+      })
+    }, {
+      title: 'Comedies',
+      data: series.filter(function (item) {
+        return item.genre === 'comedies';
+      })
+    }, {
+      title: 'Children',
+      data: series.filter(function (item) {
+        return item.genre === 'children';
+      })
+    }, {
+      title: 'Crime',
+      data: series.filter(function (item) {
+        return item.genre === 'crime';
+      })
+    }, {
+      title: 'Feel Good',
+      data: series.filter(function (item) {
+        return item.genre === 'feel-good';
+      })
+    }],
+    films: [{
+      title: 'Drama',
+      data: films.filter(function (item) {
+        return item.genre === 'drama';
+      })
+    }, {
+      title: 'Thriller',
+      data: films.filter(function (item) {
+        return item.genre === 'thriller';
+      })
+    }, {
+      title: 'Children',
+      data: films.filter(function (item) {
+        return item.genre === 'children';
+      })
+    }, {
+      title: 'Suspense',
+      data: films.filter(function (item) {
+        return item.genre === 'suspense';
+      })
+    }, {
+      title: 'Romance',
+      data: films.filter(function (item) {
+        return item.genre === 'romance';
+      })
+    }]
+  };
+}
+},{}],"src/utils/index.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+Object.defineProperty(exports, "selectionMap", {
+  enumerable: true,
+  get: function () {
+    return _selectionMap.default;
+  }
+});
+
+var _selectionMap = _interopRequireDefault(require("./selection-map"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+},{"./selection-map":"src/utils/selection-map.js"}],"src/pages/browse.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -39739,12 +40006,26 @@ var _react = _interopRequireDefault(require("react"));
 
 var _browse = require("../containers/browse");
 
+var _hooks = require("../hooks");
+
+var _utils = require("../utils");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function Browse() {
-  return /*#__PURE__*/_react.default.createElement(_browse.BrowseContainer, null, /*#__PURE__*/_react.default.createElement("p", null, "Hello"));
+  var _useContent = (0, _hooks.useContent)('series'),
+      series = _useContent.series;
+
+  var _useContent2 = (0, _hooks.useContent)('films'),
+      films = _useContent2.films;
+
+  var slides = (0, _utils.selectionMap)({
+    series: series,
+    films: films
+  });
+  return /*#__PURE__*/_react.default.createElement(_browse.BrowseContainer, null);
 }
-},{"react":"node_modules/react/index.js","../containers/browse":"src/containers/browse.js"}],"src/pages/index.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","../containers/browse":"src/containers/browse.js","../hooks":"src/hooks/index.js","../utils":"src/utils/index.js"}],"src/pages/index.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -39856,15 +40137,18 @@ var _firebase = require("./context/firebase");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+// import { seedDatabase } from './seed';
 var config = {
-  apiKey: 'AIzaSyATphOSzKr9848kQ24epRhYP3mMoUy8z6A',
-  authDomain: 'netflix-onja-loic.firebaseapp.com',
-  projectId: 'netflix-onja-loic',
-  storageBucket: 'netflix-onja-loic.appspot.com',
-  messagingSenderId: '396259060342',
-  appId: '1:396259060342:web:2ec8f7b64a83ea0bc48d57'
-};
-var firebase = window.firebase.initializeApp(config);
+  apiKey: "AIzaSyDBF9V8ZzRaL9lwqBWeHdCkl20Zr1tPlLs",
+  authDomain: "onja-netflix-clone.firebaseapp.com",
+  projectId: "onja-netflix-clone",
+  storageBucket: "onja-netflix-clone.appspot.com",
+  messagingSenderId: "11844310372",
+  appId: "1:11844310372:web:203c5a98de5f2110a11671",
+  measurementId: "G-M5QTM50ZEZ"
+}; // Initialize Firebase
+
+var firebase = window.firebase.initializeApp(config); // seedDatabase(firebase);
 
 _reactDom.default.render( /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(_firebase.FirebaseContext.Provider, {
   value: {
