@@ -9,6 +9,7 @@ export function IsUserRedirect({ user, loggedInPath, children, ...restProps }) {
 				if (!user) {
 					return children;
 				}
+
 				if (user) {
 					return (
 						<Redirect
@@ -18,11 +19,13 @@ export function IsUserRedirect({ user, loggedInPath, children, ...restProps }) {
 						/>
 					);
 				}
+
 				return null;
 			}}
 		/>
 	);
 }
+
 export function ProtectedRoute({ user, children, ...restProps }) {
 	return (
 		<Route
@@ -31,6 +34,7 @@ export function ProtectedRoute({ user, children, ...restProps }) {
 				if (user) {
 					return children;
 				}
+
 				if (!user) {
 					return (
 						<Redirect
@@ -41,6 +45,7 @@ export function ProtectedRoute({ user, children, ...restProps }) {
 						/>
 					);
 				}
+
 				return null;
 			}}
 		/>

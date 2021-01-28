@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { App } from './app';
-import { GlobalStyles } from './globalStyles';
+import { App } from './app'; 
 import { FirebaseContext } from './context/firebase';
+import dotenv from 'dotenv';
 // import { seedDatabase } from './seed';
 
 const config = {
@@ -16,13 +16,17 @@ const config = {
 };
 // Initialize Firebase
 
+
+dotenv.config(); 
+
 const firebase = window.firebase.initializeApp(config);
 
 // seedDatabase(firebase);
 ReactDOM.render(
   <>
     <FirebaseContext.Provider value={{ firebase: window.firebase }}>
-      <GlobalStyles />
+      <Glob
+      alStyles />
       <App />
     </FirebaseContext.Provider>
   </>,
